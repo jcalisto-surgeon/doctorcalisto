@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Juan L. Calisto, MD — Pediatric Surgeon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@200;300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#07192e;
+  --navy-2:#0d2540;
+  --navy-3:#112d4e;
+  --teal:#1e9a82;
+  --teal-lt:#28c4a8;
+  --gold:#b8975a;
+  --gold-lt:#d4b47c;
+  --cream:#f5f0e8;
+  --cream-2:#ede6d8;
+  --white:#ffffff;
+  --txt-dark:#07192e;
+  --txt-mid:#3a506b;
+  --txt-muted:#6c8099;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--txt-dark);overflow-x:hidden}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--navy)}
+::-webkit-scrollbar-thumb{background:var(--teal);border-radius:2px}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 5vw;transition:all .35s}
+nav.scrolled{background:rgba(7,25,46,.96);backdrop-filter:blur(16px);border-bottom:1px solid rgba(30,154,130,.15);box-shadow:0 4px 30px rgba(0,0,0,.3)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:400;color:var(--white);letter-spacing:.06em;text-decoration:none;opacity:.9}
+.nav-logo span{color:var(--teal-lt)}
+.nav-links{display:flex;gap:2.2rem;list-style:none}
+.nav-links a{font-size:.78rem;font-weight:300;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--teal-lt)}
+.nav-cta{font-size:.75rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);background:var(--teal-lt);padding:.6rem 1.5rem;border-radius:2px;text-decoration:none;transition:background .2s,transform .15s}
+.nav-cta:hover{background:var(--white);transform:translateY(-1px)}
+
+/* ── HERO ── */
+#hero{min-height:100vh;background:var(--navy);position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:0 5vw 7rem}
+
+.hero-bg{position:absolute;inset:0}
+.hero-gradient{position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 65% 40%,rgba(30,154,130,.12) 0%,transparent 70%),radial-gradient(ellipse 40% 50% at 10% 80%,rgba(184,151,90,.06) 0%,transparent 60%)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(30,154,130,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(30,154,130,.05) 1px,transparent 1px);background-size:80px 80px}
+.hero-arc{position:absolute;right:-15vw;top:50%;transform:translateY(-50%);width:min(80vw,900px);height:min(80vw,900px);border-radius:50%;border:1px solid rgba(30,154,130,.1)}
+.hero-arc::before{content:'';position:absolute;inset:60px;border-radius:50%;border:1px solid rgba(184,151,90,.07)}
+.hero-arc::after{content:'';position:absolute;inset:130px;border-radius:50%;border:1px solid rgba(30,154,130,.05)}
+
+/* robotic arm SVG accent */
+.hero-accent{position:absolute;right:5vw;top:50%;transform:translateY(-52%);width:min(42vw,520px);opacity:.06;pointer-events:none}
+
+.hero-inner{position:relative;z-index:10;max-width:700px}
+.hero-eyebrow{display:flex;align-items:center;gap:1rem;margin-bottom:2rem}
+.hero-line{width:40px;height:1px;background:var(--gold)}
+.hero-eyebrow-text{font-size:.7rem;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-lt)}
+
+h1.hero-name{font-family:'Cormorant Garamond',serif;font-size:clamp(3.5rem,6vw,6rem);font-weight:300;line-height:1;color:var(--white);letter-spacing:-.02em;margin-bottom:.5rem}
+h1.hero-name em{font-style:italic;color:var(--teal-lt)}
+.hero-title{font-size:1rem;font-weight:300;letter-spacing:.08em;color:rgba(255,255,255,.45);margin-bottom:2.5rem;text-transform:uppercase}
+
+.hero-tags{display:flex;flex-wrap:wrap;gap:.65rem;margin-bottom:3rem}
+.hero-tag{font-size:.72rem;font-weight:300;letter-spacing:.07em;text-transform:uppercase;padding:.45rem 1.1rem;border-radius:2px}
+.hero-tag.primary{color:var(--teal-lt);border:1px solid rgba(30,154,130,.5);background:rgba(30,154,130,.07)}
+.hero-tag.gold{color:var(--gold-lt);border:1px solid rgba(184,151,90,.4);background:rgba(184,151,90,.06)}
+
+.hero-actions{display:flex;gap:1.2rem;align-items:center;margin-bottom:4rem}
+.btn-primary{font-size:.8rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);background:var(--teal-lt);padding:1rem 2.4rem;border-radius:2px;text-decoration:none;display:inline-flex;align-items:center;gap:.6rem;transition:all .2s}
+.btn-primary:hover{background:var(--white);transform:translateY(-2px)}
+.btn-ghost{font-size:.8rem;font-weight:300;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);text-decoration:none;transition:color .2s}
+.btn-ghost:hover{color:var(--white)}
+
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;border-top:1px solid rgba(255,255,255,.07);padding-top:2.5rem}
+.stat{padding:0 1.5rem 0 0}
+.stat-n{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:300;color:var(--white);line-height:1;margin-bottom:.3rem}
+.stat-l{font-size:.65rem;font-weight:300;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);line-height:1.5}
+
+/* ── SECTION BASE ── */
+section{padding:7rem 5vw}
+.inner{max-width:1200px;margin:0 auto}
+.sec-tag{display:inline-block;font-size:.68rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem}
+h2.sec-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,4vw,3.6rem);font-weight:400;line-height:1.1;color:var(--navy);letter-spacing:-.01em}
+h2.sec-h em{font-style:italic;color:var(--teal)}
+h2.sec-h.light{color:var(--white)}
+h2.sec-h.light em{color:var(--teal-lt)}
+
+/* ── EXPERTISE ── */
+#expertise{background:var(--cream)}
+.expertise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:4rem}
+.exp-card{background:var(--white);border-radius:4px;overflow:hidden;border:1px solid var(--cream-2);position:relative;transition:transform .25s,box-shadow .25s}
+.exp-card:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(7,25,46,.1)}
+.exp-card-stripe{height:3px}
+.exp-card-stripe.teal{background:linear-gradient(90deg,var(--teal),var(--teal-lt))}
+.exp-card-stripe.gold{background:linear-gradient(90deg,var(--gold),var(--gold-lt))}
+.exp-card-stripe.navy{background:linear-gradient(90deg,var(--navy-2),var(--navy-3))}
+.exp-card-body{padding:2rem 2rem 2.2rem}
+.exp-icon{font-size:2rem;margin-bottom:1.2rem;display:block}
+.exp-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:500;color:var(--navy);margin-bottom:.8rem;line-height:1.2}
+.exp-text{font-size:.85rem;font-weight:300;line-height:1.85;color:var(--txt-mid);margin-bottom:1.4rem}
+.exp-bullets{list-style:none;display:flex;flex-direction:column;gap:.4rem}
+.exp-bullets li{font-size:.78rem;font-weight:300;color:var(--txt-muted);padding-left:1rem;position:relative;line-height:1.6}
+.exp-bullets li::before{content:'—';position:absolute;left:0;color:var(--teal);font-size:.7rem}
+
+/* ── CREDENTIALS ── */
+#credentials{background:var(--navy);position:relative;overflow:hidden}
+#credentials::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 80% 50%,rgba(30,154,130,.07) 0%,transparent 70%)}
+.cred-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;margin-top:4rem}
+.cred-col-header{font-size:.7rem;font-weight:400;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:2rem;padding-bottom:.75rem;border-bottom:1px solid rgba(255,255,255,.08)}
+.timeline{display:flex;flex-direction:column;gap:0}
+.tl-item{display:grid;grid-template-columns:100px 1fr;gap:1.5rem;padding:1.5rem 0;border-bottom:1px solid rgba(255,255,255,.06);position:relative}
+.tl-item:last-child{border-bottom:none}
+.tl-year{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:300;color:rgba(255,255,255,.2);padding-top:.15rem;line-height:1}
+.tl-content{}
+.tl-title{font-size:.88rem;font-weight:400;color:var(--white);margin-bottom:.2rem;line-height:1.3}
+.tl-sub{font-size:.78rem;font-weight:300;color:rgba(255,255,255,.35);line-height:1.5}
+
+.board-list{display:flex;flex-direction:column;gap:1rem;margin-top:1rem}
+.board-item{display:flex;align-items:flex-start;gap:1rem;padding:1.2rem 1.4rem;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:3px;transition:border-color .2s,background .2s}
+.board-item:hover{border-color:rgba(30,154,130,.3);background:rgba(30,154,130,.04)}
+.board-dot{width:8px;height:8px;border-radius:50%;background:var(--teal);flex-shrink:0;margin-top:.35rem}
+.board-text{}
+.board-name{font-size:.85rem;font-weight:400;color:var(--white);margin-bottom:.15rem;line-height:1.3}
+.board-status{font-size:.72rem;font-weight:300;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-lt)}
+
+/* ── RESEARCH ── */
+#research{background:var(--cream)}
+.research-layout{display:grid;grid-template-columns:1fr 1.5fr;gap:6rem;align-items:start;margin-top:4rem}
+.research-sidebar{}
+.research-sidebar p{font-size:.95rem;font-weight:300;line-height:1.9;color:var(--txt-mid);margin-top:1.5rem;margin-bottom:2rem}
+.orgs-list{display:flex;flex-direction:column;gap:.6rem;margin-top:1rem}
+.org-item{display:flex;align-items:center;gap:.75rem;font-size:.8rem;font-weight:300;color:var(--txt-mid);padding:.65rem .9rem;background:var(--white);border:1px solid var(--cream-2);border-radius:3px}
+.org-item::before{content:'◆';font-size:.4rem;color:var(--teal);flex-shrink:0}
+
+.pubs-list{display:flex;flex-direction:column;gap:1rem}
+.pub-item{padding:1.4rem 1.6rem;background:var(--white);border:1px solid var(--cream-2);border-left:3px solid transparent;border-radius:0 3px 3px 0;transition:border-color .2s,transform .2s,box-shadow .2s;cursor:default}
+.pub-item:hover{border-left-color:var(--teal);transform:translateX(4px);box-shadow:0 4px 20px rgba(7,25,46,.07)}
+.pub-year{font-size:.65rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:.4rem}
+.pub-title{font-size:.85rem;font-weight:400;color:var(--navy);line-height:1.5;margin-bottom:.3rem}
+.pub-journal{font-size:.75rem;font-weight:300;color:var(--txt-muted);font-style:italic}
+
+/* ── GLOBAL IMPACT ── */
+#global{background:var(--navy-2);position:relative;overflow:hidden}
+#global::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(30,154,130,.05) 0%,transparent 50%),radial-gradient(ellipse 80% 60% at 20% 100%,rgba(184,151,90,.05) 0%,transparent 60%)}
+.global-inner{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
+.global-content{}
+.global-content p{font-size:.95rem;font-weight:300;line-height:1.9;color:rgba(255,255,255,.55);margin-top:1.5rem;margin-bottom:2.5rem}
+.impact-items{display:flex;flex-direction:column;gap:1.2rem}
+.impact-item{display:flex;align-items:flex-start;gap:1.2rem}
+.impact-num{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:var(--teal-lt);line-height:1;min-width:60px}
+.impact-text{}
+.impact-label{font-size:.85rem;font-weight:400;color:var(--white);margin-bottom:.2rem}
+.impact-sub{font-size:.75rem;font-weight:300;color:rgba(255,255,255,.35);line-height:1.6}
+
+.global-visual{position:relative}
+.globe-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;padding:2.5rem;position:relative;overflow:hidden}
+.globe-card::before{content:'';position:absolute;top:-40px;right:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(30,154,130,.1)}
+.globe-card::after{content:'';position:absolute;top:-10px;right:-10px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(30,154,130,.07)}
+.globe-title{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:400;color:var(--white);margin-bottom:1.5rem;position:relative}
+.globe-countries{display:flex;flex-wrap:wrap;gap:.5rem}
+.country-tag{font-size:.72rem;font-weight:300;letter-spacing:.05em;color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.1);padding:.3rem .8rem;border-radius:2px;transition:all .2s}
+.country-tag:hover{color:var(--teal-lt);border-color:rgba(30,154,130,.4);background:rgba(30,154,130,.05)}
+.globe-note{font-size:.78rem;font-weight:300;color:rgba(255,255,255,.25);margin-top:1.5rem;line-height:1.6;border-top:1px solid rgba(255,255,255,.06);padding-top:1rem}
+
+/* ── CONSULT CTA ── */
+#consult{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-3) 100%);position:relative;overflow:hidden}
+#consult::before{content:'';position:absolute;left:-10vw;bottom:-10vw;width:60vw;height:60vw;border-radius:50%;border:1px solid rgba(30,154,130,.08)}
+#consult::after{content:'';position:absolute;left:0;bottom:0;width:40vw;height:40vw;border-radius:50%;border:1px solid rgba(30,154,130,.05)}
+.consult-inner{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;max-width:1200px;margin:0 auto}
+.consult-content p{font-size:1rem;font-weight:300;line-height:1.85;color:rgba(255,255,255,.5);margin-top:1.5rem;margin-bottom:2.5rem}
+.consult-bullets{display:flex;flex-direction:column;gap:.8rem}
+.cb-item{display:flex;align-items:center;gap:.75rem;font-size:.82rem;font-weight:300;color:rgba(255,255,255,.55)}
+.cb-dot{width:6px;height:6px;border-radius:50%;background:var(--teal-lt);flex-shrink:0}
+
+.consult-form{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:6px;padding:2.8rem}
+.form-title{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:400;color:var(--white);margin-bottom:.5rem}
+.form-sub{font-size:.78rem;font-weight:300;color:rgba(255,255,255,.3);margin-bottom:2rem}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+.f-field{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem}
+.f-field label{font-size:.65rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3)}
+.f-field input,.f-field select,.f-field textarea{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:3px;padding:.8rem 1rem;font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:300;color:var(--white);outline:none;transition:border-color .2s,background .2s;width:100%}
+.f-field input::placeholder,.f-field textarea::placeholder{color:rgba(255,255,255,.18)}
+.f-field select option{background:var(--navy);color:var(--white)}
+.f-field input:focus,.f-field select:focus,.f-field textarea:focus{border-color:var(--teal);background:rgba(30,154,130,.06)}
+.f-field textarea{resize:vertical;min-height:90px}
+.f-submit{width:100%;padding:1rem;font-family:'DM Sans',sans-serif;font-size:.82rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);background:var(--teal-lt);border:none;border-radius:3px;cursor:pointer;transition:all .2s;margin-top:.5rem}
+.f-submit:hover{background:var(--white);transform:translateY(-1px)}
+
+/* ── FOOTER ── */
+footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.05);padding:3rem 5vw;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:300;color:rgba(255,255,255,.6)}
+.footer-logo span{color:var(--teal-lt)}
+.footer-copy{font-size:.72rem;font-weight:300;color:rgba(255,255,255,.2);text-align:center}
+.footer-affil{font-size:.72rem;font-weight:300;color:rgba(255,255,255,.25);text-align:right}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+.hero-eyebrow{animation:fadeUp .7s .1s ease both}
+h1.hero-name{animation:fadeUp .7s .2s ease both}
+.hero-title{animation:fadeUp .7s .3s ease both}
+.hero-tags{animation:fadeUp .7s .4s ease both}
+.hero-actions{animation:fadeUp .7s .5s ease both}
+.hero-stats{animation:fadeUp .7s .65s ease both}
+
+/* ── REVEAL ON SCROLL ── */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .nav-links{display:none}
+  .expertise-grid,.cred-grid,.research-layout,.global-inner,.consult-inner{grid-template-columns:1fr}
+  .hero-stats{grid-template-columns:1fr 1fr}
+  .f-row{grid-template-columns:1fr}
+  footer{flex-direction:column;text-align:center}
+  .footer-affil{text-align:center}
+  #hero{padding:7rem 5vw 5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">Dr. <span>Calisto</span></a>
+  <ul class="nav-links">
+    <li><a href="#expertise">Expertise</a></li>
+    <li><a href="#credentials">Credentials</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#global">Global Impact</a></li>
+  </ul>
+  <a href="#consult" class="nav-cta">Request Consultation</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg">
+    <div class="hero-gradient"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-arc"></div>
+    <!-- Robotic surgery abstract SVG -->
+    <svg class="hero-accent" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="250" cy="250" r="200" stroke="white" stroke-width="0.5"/>
+      <circle cx="250" cy="250" r="150" stroke="white" stroke-width="0.5"/>
+      <circle cx="250" cy="250" r="80" stroke="white" stroke-width="0.5"/>
+      <line x1="50" y1="250" x2="450" y2="250" stroke="white" stroke-width="0.5"/>
+      <line x1="250" y1="50" x2="250" y2="450" stroke="white" stroke-width="0.5"/>
+      <line x1="109" y1="109" x2="391" y2="391" stroke="white" stroke-width="0.5"/>
+      <line x1="391" y1="109" x2="109" y2="391" stroke="white" stroke-width="0.5"/>
+      <circle cx="250" cy="50" r="6" fill="white"/>
+      <circle cx="250" cy="450" r="6" fill="white"/>
+      <circle cx="50" cy="250" r="6" fill="white"/>
+      <circle cx="450" cy="250" r="6" fill="white"/>
+      <circle cx="250" cy="250" r="10" stroke="white" stroke-width="1"/>
+      <path d="M250 170 L320 210 L320 290 L250 330 L180 290 L180 210 Z" stroke="white" stroke-width="0.5" fill="none"/>
+    </svg>
+  </div>
+
+  <div class="hero-inner">
+    <div class="hero-eyebrow">
+      <div class="hero-line"></div>
+      <span class="hero-eyebrow-text">Nicklaus Children's Hospital · Miami, Florida</span>
+    </div>
+
+    <h1 class="hero-name">Juan L. <em>Calisto</em>, MD</h1>
+    <p class="hero-title">Triple Board-Certified Pediatric Surgeon &nbsp;·&nbsp; Director, Colorectal Center</p>
+
+    <div class="hero-tags">
+      <span class="hero-tag primary">Robotic Surgery</span>
+      <span class="hero-tag primary">Pediatric Colorectal</span>
+      <span class="hero-tag primary">Pelvic Surgery</span>
+      <span class="hero-tag primary">Complex Cases</span>
+      <span class="hero-tag gold">World Expert</span>
+      <span class="hero-tag gold">International Educator</span>
+    </div>
+
+    <div class="hero-actions">
+      <a href="#consult" class="btn-primary">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Request a Consultation
+      </a>
+      <a href="#expertise" class="btn-ghost">Explore expertise →</a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-n">3×</div>
+        <div class="stat-l">Board<br>Certifications</div>
+      </div>
+      <div class="stat">
+        <div class="stat-n">2018</div>
+        <div class="stat-l">Founded Florida's<br>1st Ped. Colorectal Center</div>
+      </div>
+      <div class="stat">
+        <div class="stat-n">2014</div>
+        <div class="stat-l">Global Surgical<br>Training Program</div>
+      </div>
+      <div class="stat">
+        <div class="stat-n">15+</div>
+        <div class="stat-l">Peer-Reviewed<br>Publications</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section id="expertise">
+  <div class="inner">
+    <span class="sec-tag reveal">Areas of Expertise</span>
+    <h2 class="sec-h reveal">Surgical mastery at the<br><em>frontier of pediatric care.</em></h2>
+
+    <div class="expertise-grid">
+
+      <div class="exp-card reveal">
+        <div class="exp-card-stripe teal"></div>
+        <div class="exp-card-body">
+          <span class="exp-icon">🤖</span>
+          <h3 class="exp-title">Robotic Surgery</h3>
+          <p class="exp-text">A pioneer in minimally invasive robotic techniques for children, Dr. Calisto leads one of the most advanced robotic surgery programs at a freestanding children's hospital in the United States.</p>
+          <ul class="exp-bullets">
+            <li>Single-incision robotic cholecystectomy (6-year institutional series)</li>
+            <li>Robotic inguinal hernia repair in adolescents</li>
+            <li>Safe robotic surgery introduction protocols</li>
+            <li>Complex reconstructive robotic procedures</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-card reveal">
+        <div class="exp-card-stripe gold"></div>
+        <div class="exp-card-body">
+          <span class="exp-icon">⚕</span>
+          <h3 class="exp-title">Pediatric Colorectal & Pelvic Surgery</h3>
+          <p class="exp-text">Recognized internationally as a world expert in pediatric colorectal surgery, Dr. Calisto directs Florida's first and only comprehensive pediatric colorectal center, treating the most complex anorectal and pelvic conditions.</p>
+          <ul class="exp-bullets">
+            <li>Hirschsprung disease & pull-through procedures</li>
+            <li>Anorectal malformations (ARM) — including revision surgery</li>
+            <li>Pelvic floor reconstruction</li>
+            <li>Rectal prolapse (modified Delorme's procedure)</li>
+            <li>Vaginal agenesis with rectovestibular fistula</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-card reveal">
+        <div class="exp-card-stripe navy"></div>
+        <div class="exp-card-body">
+          <span class="exp-icon">🔬</span>
+          <h3 class="exp-title">Complex Case Management</h3>
+          <p class="exp-text">Triple-board certified in Pediatric Surgery, General Surgery, and Surgical Critical Care, Dr. Calisto brings unmatched breadth to children with multifaceted conditions requiring comprehensive surgical judgment.</p>
+          <ul class="exp-bullets">
+            <li>Surgical critical care — complex perioperative management</li>
+            <li>Previously repaired patients not doing well (ARM revision)</li>
+            <li>Rare and rare-combination congenital anomalies</li>
+            <li>Multidisciplinary tumor and colorectal boards</li>
+            <li>Second opinions on complex pediatric surgical cases</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section id="credentials">
+  <div class="inner">
+    <span class="sec-tag reveal" style="color:var(--teal-lt)">Training & Credentials</span>
+    <h2 class="sec-h light reveal">Forged at the world's<br><em>leading institutions.</em></h2>
+
+    <div class="cred-grid">
+      <div class="reveal">
+        <div class="cred-col-header">Academic Formation</div>
+        <div class="timeline">
+          <div class="tl-item">
+            <span class="tl-year">Fellowship</span>
+            <div class="tl-content">
+              <div class="tl-title">Pediatric Surgery Fellowship</div>
+              <div class="tl-sub">Children's Hospital of Pittsburgh</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-year">Research</span>
+            <div class="tl-content">
+              <div class="tl-title">Research Fellow</div>
+              <div class="tl-sub">Weill-Cornell Medical College, New York</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-year">Residency</span>
+            <div class="tl-content">
+              <div class="tl-title">General Surgery Residency</div>
+              <div class="tl-sub">University of Oklahoma Health Sciences</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-year">Medical</span>
+            <div class="tl-content">
+              <div class="tl-title">Doctor of Medicine</div>
+              <div class="tl-sub">Universidad Científica del Sur</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-year">2018→</span>
+            <div class="tl-content">
+              <div class="tl-title">Director, Colorectal Center</div>
+              <div class="tl-sub">Nicklaus Children's Hospital — Florida's first & only comprehensive pediatric colorectal center</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="cred-col-header">Board Certifications</div>
+        <div class="board-list">
+          <div class="board-item">
+            <div class="board-dot"></div>
+            <div class="board-text">
+              <div class="board-name">Pediatric Surgery</div>
+              <div class="board-status">American Board of Surgery · Certified</div>
+            </div>
+          </div>
+          <div class="board-item">
+            <div class="board-dot"></div>
+            <div class="board-text">
+              <div class="board-name">General Surgery</div>
+              <div class="board-status">American Board of Surgery · Certified</div>
+            </div>
+          </div>
+          <div class="board-item">
+            <div class="board-dot"></div>
+            <div class="board-text">
+              <div class="board-name">Surgical Critical Care</div>
+              <div class="board-status">American Board of Surgery · Certified</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cred-col-header" style="margin-top:2.5rem">Professional Memberships</div>
+        <div class="board-list">
+          <div class="board-item">
+            <div class="board-dot" style="background:var(--gold)"></div>
+            <div class="board-text"><div class="board-name" style="font-size:.8rem">Pediatric Colorectal and Pelvic Learning Consortium</div></div>
+          </div>
+          <div class="board-item">
+            <div class="board-dot" style="background:var(--gold)"></div>
+            <div class="board-text"><div class="board-name" style="font-size:.8rem">American Pediatric Surgical Association</div></div>
+          </div>
+          <div class="board-item">
+            <div class="board-dot" style="background:var(--gold)"></div>
+            <div class="board-text"><div class="board-name" style="font-size:.8rem">American College of Surgeons</div></div>
+          </div>
+          <div class="board-item">
+            <div class="board-dot" style="background:var(--gold)"></div>
+            <div class="board-text"><div class="board-name" style="font-size:.8rem">Society of American Gastrointestinal and Endoscopic Surgeons</div></div>
+          </div>
+          <div class="board-item">
+            <div class="board-dot" style="background:var(--gold)"></div>
+            <div class="board-text"><div class="board-name" style="font-size:.8rem">International Pediatric Endosurgery Group</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research">
+  <div class="inner">
+    <span class="sec-tag reveal">Research & Publications</span>
+    <h2 class="sec-h reveal">Advancing the science<br><em>of pediatric surgery.</em></h2>
+
+    <div class="research-layout">
+      <div class="reveal">
+        <p>Dr. Calisto's research spans robotic surgical innovation, anorectal malformations, colorectal reconstruction, and complex congenital anomalies — published in the field's leading peer-reviewed journals.</p>
+        <div class="cred-col-header" style="color:var(--txt-muted)">Member Organizations</div>
+        <div class="orgs-list">
+          <div class="org-item">Crohn's & Colitis Foundation</div>
+          <div class="org-item">International Pediatric Endosurgery Group</div>
+          <div class="org-item">Pediatric Colorectal & Pelvic Learning Consortium</div>
+          <div class="org-item">American Pediatric Surgical Association</div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="pubs-list">
+          <div class="pub-item">
+            <div class="pub-year">2025</div>
+            <div class="pub-title">Mesenteric lipoma-induced small bowel obstruction in a pediatric patient: a rare case of midgut volvulus</div>
+            <div class="pub-journal">Cureus, 17(3)</div>
+          </div>
+          <div class="pub-item">
+            <div class="pub-year">2023</div>
+            <div class="pub-title">Pediatric Single-Incision Robotic Cholecystectomy: A 6-Year Update from a Single Institution</div>
+            <div class="pub-journal">Journal of Laparoendoscopic & Advanced Surgical Techniques</div>
+          </div>
+          <div class="pub-item">
+            <div class="pub-year">2023</div>
+            <div class="pub-title">The safe introduction of robotic surgery in a free-standing children's hospital</div>
+            <div class="pub-journal">Journal of Robotic Surgery, 17(5)</div>
+          </div>
+          <div class="pub-item">
+            <div class="pub-year">2021</div>
+            <div class="pub-title">Initial Experience with Robotic Inguinal Hernia Repair in the Adolescent Population</div>
+            <div class="pub-journal">Journal of Laparoendoscopic & Advanced Surgical Techniques, 31(11)</div>
+          </div>
+          <div class="pub-item">
+            <div class="pub-year">2020</div>
+            <div class="pub-title">Assessing the previously repaired patient with an anorectal malformation who is not doing well</div>
+            <div class="pub-journal">Seminars in Pediatric Surgery, 29(6)</div>
+          </div>
+          <div class="pub-item">
+            <div class="pub-year">2019</div>
+            <div class="pub-title">Transanal endorectal approach for idiopathic rectal prolapse in children: Experience with the modified Delorme's procedure</div>
+            <div class="pub-journal">Journal of Pediatric Surgery, 54(4)</div>
+          </div>
+          <div class="pub-item">
+            <div class="pub-year">2016</div>
+            <div class="pub-title">Vaginal agenesis and rectovestibular fistula — ileum for vaginal replacement preserving natural fecal reservoir</div>
+            <div class="pub-journal">Journal of Pediatric Surgery, 51(11)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GLOBAL IMPACT -->
+<section id="global">
+  <div class="inner global-inner">
+    <div class="global-content reveal">
+      <span class="sec-tag" style="color:var(--teal-lt)">Global Impact</span>
+      <h2 class="sec-h light">Teaching the world<br><em>to heal children.</em></h2>
+      <p>Since 2014, Dr. Calisto has run an international training program dedicated to teaching pediatric colorectal surgery to surgeons from developing countries — bringing world-class surgical technique to regions where these skills are critically scarce.</p>
+      <div class="impact-items">
+        <div class="impact-item">
+          <div class="impact-num">2014</div>
+          <div class="impact-text">
+            <div class="impact-label">Program Founded</div>
+            <div class="impact-sub">International training initiative for pediatric colorectal surgery in developing nations</div>
+          </div>
+        </div>
+        <div class="impact-item">
+          <div class="impact-num">10+</div>
+          <div class="impact-text">
+            <div class="impact-label">Countries Reached</div>
+            <div class="impact-sub">Surgeons trained across Latin America, Africa, and the Middle East</div>
+          </div>
+        </div>
+        <div class="impact-item">
+          <div class="impact-num">∞</div>
+          <div class="impact-text">
+            <div class="impact-label">National & International Conferences</div>
+            <div class="impact-sub">Keynote presentations, live surgical demonstrations, and workshops worldwide</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="global-visual reveal">
+      <div class="globe-card">
+        <div class="globe-title">International Surgical Training Program</div>
+        <div class="globe-countries">
+          <span class="country-tag">🇵🇪 Peru</span>
+          <span class="country-tag">🇨🇴 Colombia</span>
+          <span class="country-tag">🇲🇽 Mexico</span>
+          <span class="country-tag">🇧🇷 Brazil</span>
+          <span class="country-tag">🇦🇷 Argentina</span>
+          <span class="country-tag">🇪🇨 Ecuador</span>
+          <span class="country-tag">🇧🇴 Bolivia</span>
+          <span class="country-tag">🇻🇪 Venezuela</span>
+          <span class="country-tag">🇺🇾 Uruguay</span>
+          <span class="country-tag">🇩🇴 Dominican Rep.</span>
+          <span class="country-tag">🌍 Africa</span>
+          <span class="country-tag">🌏 Middle East</span>
+        </div>
+        <div class="globe-note">Training pediatric colorectal surgeons in regions where complex anorectal and pelvic procedures are otherwise inaccessible to children in need.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONSULT CTA -->
+<section id="consult">
+  <div class="consult-inner">
+    <div class="consult-content reveal">
+      <span class="sec-tag" style="color:var(--teal-lt)">Consultation</span>
+      <h2 class="sec-h light">Request a private<br><em>consultation.</em></h2>
+      <p>For complex pediatric surgical cases, second opinions, or international consultations, Dr. Calisto's office provides discreet, world-class expert review — delivered with the urgency your child's case deserves.</p>
+      <div class="consult-bullets">
+        <div class="cb-item"><span class="cb-dot"></span> Expert second opinion on surgical diagnosis or plan</div>
+        <div class="cb-item"><span class="cb-dot"></span> Complex robotic or colorectal case consultation</div>
+        <div class="cb-item"><span class="cb-dot"></span> International and private-pay patients welcome</div>
+        <div class="cb-item"><span class="cb-dot"></span> Virtual and in-person appointments available</div>
+        <div class="cb-item"><span class="cb-dot"></span> HIPAA-compliant, fully confidential process</div>
+        <div class="cb-item"><span class="cb-dot"></span> Office: 305-662-8320</div>
+      </div>
+    </div>
+
+    <div class="consult-form reveal">
+      <div class="form-title">Get in Touch</div>
+      <div class="form-sub">We will respond within one business day.</div>
+      <form onsubmit="submitForm(event)">
+        <div class="f-row">
+          <div class="f-field"><label>First Name</label><input type="text" placeholder="Jane"/></div>
+          <div class="f-field"><label>Last Name</label><input type="text" placeholder="Smith"/></div>
+        </div>
+        <div class="f-row">
+          <div class="f-field"><label>Email</label><input type="email" placeholder="jane@example.com"/></div>
+          <div class="f-field"><label>Phone</label><input type="tel" placeholder="+1 (555) 000-0000"/></div>
+        </div>
+        <div class="f-field">
+          <label>Type of Inquiry</label>
+          <select>
+            <option value="">Select…</option>
+            <option>Second Opinion — Colorectal / Anorectal</option>
+            <option>Second Opinion — Robotic Surgery</option>
+            <option>Second Opinion — Pelvic / Complex Case</option>
+            <option>New Patient Consultation</option>
+            <option>International Patient Inquiry</option>
+            <option>Physician Referral</option>
+            <option>Medical Education / Training</option>
+          </select>
+        </div>
+        <div class="f-field">
+          <label>Brief description of the case</label>
+          <textarea placeholder="Please describe your child's diagnosis, prior treatments, and what you are seeking…"></textarea>
+        </div>
+        <button type="submit" class="f-submit" id="formBtn">Submit Request →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Juan L. <span>Calisto</span>, MD</div>
+  <p class="footer-copy">© 2025 · All Rights Reserved · Medical information provided does not constitute a physician-patient relationship.</p>
+  <p class="footer-affil">Nicklaus Children's Hospital · Miami, FL</p>
+</footer>
+
+<script>
+// NAV scroll
+const nav = document.getElementById('navbar');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60));
+
+// Reveal on scroll
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, {threshold: 0.12});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Form
+function submitForm(e) {
+  e.preventDefault();
+  const btn = document.getElementById('formBtn');
+  btn.textContent = 'Request Submitted ✓';
+  btn.style.background = 'rgba(40,196,168,0.9)';
+  btn.disabled = true;
+}
+</script>
+</body>
+</html>
