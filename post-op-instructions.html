@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>After Your Child's Surgery · Después de la Cirugía</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FAF7F1;
+    --card:#FFFFFF;
+    --ink:#1E2A3A;
+    --muted:#5A6678;
+    --navy:#16243B;
+    --gold:#A8791F;
+    --gold-soft:#F0E6CC;
+    --crimson:#A4221B;
+    --crimson-soft:#FAEAE6;
+    --line:rgba(22,36,59,.12);
+    --shadow:0 1px 2px rgba(22,36,59,.06), 0 8px 24px rgba(22,36,59,.06);
+    --radius:16px;
+    --tap:52px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    padding-bottom:84px; /* space for mobile action bar */
+  }
+
+  /* ---------- language toggle ---------- */
+  .t-es{display:none}
+  body.lang-es .t-en{display:none}
+  body.lang-es .t-es{display:inline}
+
+  /* ---------- top bar ---------- */
+  .topbar{
+    position:sticky;top:0;z-index:40;
+    background:var(--navy);color:#fff;
+    display:flex;align-items:center;justify-content:space-between;
+    gap:12px;padding:10px 18px;
+    border-bottom:2px solid var(--gold);
+  }
+  .brand{display:flex;align-items:center;gap:10px;min-width:0}
+  .brand .heart{flex:0 0 auto;color:var(--gold)}
+  .brand b{font-weight:600;font-size:15px;letter-spacing:.2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .brand small{display:block;font-size:11px;color:#B9C2D2;font-weight:400;margin-top:-2px}
+  .langtoggle{display:flex;flex:0 0 auto;border:1px solid rgba(255,255,255,.3);border-radius:999px;overflow:hidden}
+  .langtoggle button{
+    appearance:none;border:0;background:transparent;color:#C9D2E0;
+    font:600 13px "Inter",sans-serif;padding:8px 14px;cursor:pointer;min-height:40px;
+  }
+  .langtoggle button[aria-pressed="true"]{background:var(--gold);color:#1b1407}
+  .langtoggle button:focus-visible{outline:2px solid #fff;outline-offset:-2px}
+
+  /* ---------- layout ---------- */
+  .wrap{max-width:680px;margin:0 auto;padding:0 18px}
+
+  /* ---------- masthead ---------- */
+  .hero{padding:30px 0 18px;text-align:center}
+  .hero .eyebrow{
+    font:600 12px "Inter",sans-serif;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--gold);margin-bottom:12px;
+  }
+  .hero h1{
+    font-family:"Fraunces",Georgia,serif;font-weight:500;
+    font-size:clamp(28px,7vw,40px);line-height:1.1;color:var(--navy);
+    margin:0 0 10px;letter-spacing:-.01em;
+  }
+  .hero p{margin:0 auto;max-width:46ch;color:var(--muted);font-size:16px}
+  .hero .sig{margin-top:16px;font-size:14px;color:var(--ink)}
+  .hero .sig b{color:var(--navy)}
+
+  /* ---------- quick-jump chips ---------- */
+  .chips{
+    display:flex;gap:8px;overflow-x:auto;padding:14px 18px;margin:0 -18px;
+    -webkit-overflow-scrolling:touch;scrollbar-width:none;
+  }
+  .chips::-webkit-scrollbar{display:none}
+  .chips a{
+    flex:0 0 auto;text-decoration:none;font:600 13.5px "Inter",sans-serif;
+    color:var(--navy);background:#fff;border:1px solid var(--line);
+    padding:9px 15px;border-radius:999px;white-space:nowrap;
+  }
+  .chips a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+  /* ---------- red flag alert ---------- */
+  .alert{
+    background:var(--crimson-soft);border:1.5px solid rgba(164,34,27,.32);
+    border-radius:var(--radius);padding:20px;margin:8px 0 26px;
+    scroll-margin-top:78px;
+  }
+  .alert h2{
+    display:flex;align-items:center;gap:10px;margin:0 0 6px;
+    font-family:"Fraunces",serif;font-weight:600;font-size:21px;color:var(--crimson);
+  }
+  .alert .sub{margin:0 0 14px;color:#7d2b25;font-size:15px}
+  .alert ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+  .alert li{display:flex;gap:10px;align-items:flex-start;font-weight:500;font-size:15.5px}
+  .alert li svg{flex:0 0 auto;margin-top:3px;color:var(--crimson)}
+  .alert .callrow{display:grid;gap:10px;margin-top:18px}
+  .btn{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    min-height:var(--tap);text-decoration:none;border-radius:12px;
+    font:700 16px "Inter",sans-serif;border:0;cursor:pointer;
+  }
+  .btn-call{background:var(--crimson);color:#fff}
+  .btn-call:active{background:#8c1c16}
+  .btn-911{background:#fff;color:var(--crimson);border:1.5px solid var(--crimson)}
+  .btn:focus-visible{outline:3px solid var(--navy);outline-offset:2px}
+  .alert .note{margin:12px 0 0;font-size:13.5px;color:#7d2b25;text-align:center}
+
+  /* ---------- care sections ---------- */
+  .section{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);padding:22px;margin-bottom:16px;scroll-margin-top:78px;
+  }
+  .section > h2{
+    display:flex;align-items:baseline;gap:12px;margin:0 0 14px;
+    font-family:"Fraunces",serif;font-weight:600;font-size:22px;color:var(--navy);
+    line-height:1.15;
+  }
+  .section > h2 .num{
+    flex:0 0 auto;font-family:"Fraunces",serif;font-size:15px;font-weight:600;
+    color:var(--gold);border:1.5px solid var(--gold-soft);background:#FCF7EA;
+    width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    align-self:center;
+  }
+  .section p{margin:0 0 12px}
+  .section p:last-child{margin-bottom:0}
+  .section h3{
+    font:600 15px "Inter",sans-serif;color:var(--navy);margin:18px 0 8px;
+    text-transform:none;letter-spacing:0;
+  }
+  ul.care{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+  ul.care li{position:relative;padding-left:22px}
+  ul.care li::before{
+    content:"";position:absolute;left:2px;top:10px;width:7px;height:7px;
+    border-radius:50%;background:var(--gold);
+  }
+  .fill{
+    background:var(--gold-soft);border-radius:5px;padding:0 7px;font-weight:600;
+    color:#6b4f11;white-space:nowrap;
+  }
+  .pill-info{
+    display:flex;gap:10px;align-items:flex-start;background:#F4F7FB;
+    border:1px solid rgba(22,36,59,.1);border-radius:12px;padding:12px 14px;
+    font-size:14.5px;color:var(--navy);margin:0 0 16px;
+  }
+  .pill-info svg{flex:0 0 auto;margin-top:2px;color:var(--navy)}
+
+  .agegrid{display:grid;gap:10px}
+  .agecard{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:#FCFAF5}
+  .agecard b{display:block;color:var(--gold);font-size:13.5px;letter-spacing:.02em;margin-bottom:2px}
+
+  /* ---------- follow-up ---------- */
+  .followup{
+    background:var(--navy);color:#fff;border-radius:var(--radius);padding:22px;margin-bottom:22px;
+  }
+  .followup h2{font-family:"Fraunces",serif;font-weight:500;font-size:21px;margin:0 0 6px;color:#fff}
+  .followup p{margin:0 0 14px;color:#C5CEDC;font-size:15px}
+  .followup .row{display:flex;align-items:center;gap:12px;border-top:1px solid rgba(255,255,255,.15);padding:12px 0}
+  .followup .row:first-of-type{border-top:0;padding-top:0}
+  .followup .row span{color:#9FB0C6;font-size:13px;flex:0 0 92px}
+  .followup .row .line{flex:1;border-bottom:1.5px dashed rgba(255,255,255,.4);height:18px}
+
+  /* ---------- footer ---------- */
+  footer{padding:24px 0 40px;text-align:center;color:var(--muted);font-size:13px;line-height:1.7}
+  footer .disclaimer{
+    background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;
+    margin-bottom:18px;text-align:left;font-size:13.5px;color:var(--muted);
+  }
+  footer .org{font-weight:600;color:var(--navy);font-size:14px}
+  footer a{color:var(--gold);text-decoration:none}
+
+  /* ---------- mobile action bar ---------- */
+  .actionbar{
+    position:fixed;left:0;right:0;bottom:0;z-index:50;
+    display:flex;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+    background:rgba(250,247,241,.94);backdrop-filter:blur(8px);
+    border-top:1px solid var(--line);
+  }
+  .actionbar a{
+    flex:1;display:flex;align-items:center;justify-content:center;gap:8px;
+    min-height:var(--tap);border-radius:12px;text-decoration:none;
+    font:700 15px "Inter",sans-serif;
+  }
+  .actionbar .a-call{background:var(--navy);color:#fff}
+  .actionbar .a-flag{background:var(--crimson-soft);color:var(--crimson);border:1.5px solid rgba(164,34,27,.35)}
+  .actionbar a:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+
+  @media (min-width:560px){
+    .alert .callrow{grid-template-columns:1fr 1fr}
+    .agegrid{grid-template-columns:1fr 1fr}
+  }
+</style>
+</head>
+<body class="lang-en">
+
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <div class="brand">
+      <svg class="heart" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.7-10-9.3C.2 8.4 1.8 4.8 5.3 4.8c2 0 3.4 1.1 4.2 2.4l.5.8.5-.8c.8-1.3 2.2-2.4 4.2-2.4 3.5 0 5.1 3.6 3.3 6.9C19.5 16.3 12 21 12 21z"/></svg>
+      <div>
+        <b>Juan L. Calisto, M.D.</b>
+        <small><span class="t-en">Pediatric Surgery</span><span class="t-es">Cirugía Pediátrica</span></small>
+      </div>
+    </div>
+    <div class="langtoggle" role="group" aria-label="Language">
+      <button id="btn-en" aria-pressed="true" onclick="setLang('en')">EN</button>
+      <button id="btn-es" aria-pressed="false" onclick="setLang('es')">ES</button>
+    </div>
+  </header>
+
+  <div class="wrap">
+
+    <!-- MASTHEAD -->
+    <section class="hero">
+      <div class="eyebrow"><span class="t-en">Home Care After Surgery</span><span class="t-es">Cuidado en Casa Después de la Cirugía</span></div>
+      <h1><span class="t-en">After your child's surgery</span><span class="t-es">Después de la cirugía de su hijo/a</span></h1>
+      <p>
+        <span class="t-en">Everything you need to care for your child at home — and exactly when to call us. Keep this page handy for the next two weeks.</span>
+        <span class="t-es">Todo lo que necesita para cuidar a su hijo/a en casa — y exactamente cuándo llamarnos. Guarde esta página a la mano durante las próximas dos semanas.</span>
+      </p>
+      <div class="sig">
+        <span class="t-en">Cared for by <b>Dr. Juan L. Calisto</b> and your surgical team</span>
+        <span class="t-es">Atendido por el <b>Dr. Juan L. Calisto</b> y su equipo quirúrgico</span>
+      </div>
+    </section>
+
+    <!-- QUICK JUMP -->
+    <nav class="chips" aria-label="Jump to a section">
+      <a href="#when-to-call"><span class="t-en">⚠ When to call</span><span class="t-es">⚠ Cuándo llamar</span></a>
+      <a href="#incision"><span class="t-en">Incision</span><span class="t-es">Herida</span></a>
+      <a href="#bathing"><span class="t-en">Bathing</span><span class="t-es">Baño</span></a>
+      <a href="#feeding"><span class="t-en">Feeding</span><span class="t-es">Alimentación</span></a>
+      <a href="#pain"><span class="t-en">Pain</span><span class="t-es">Dolor</span></a>
+      <a href="#activity"><span class="t-en">Activity</span><span class="t-es">Actividad</span></a>
+    </nav>
+
+    <!-- RED FLAG ALERT -->
+    <section class="alert" id="when-to-call">
+      <h2>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 1 21h22L12 2zm0 6 6.5 11h-13L12 8zm-1 4v3h2v-3h-2zm0 4v2h2v-2h-2z"/></svg>
+        <span class="t-en">Call us right away if you see</span><span class="t-es">Llámenos de inmediato si ve</span>
+      </h2>
+      <p class="sub"><span class="t-en">Don't wait — call the office before going to the Emergency Room.</span><span class="t-es">No espere — llame a la oficina antes de ir a la sala de emergencias.</span></p>
+      <ul>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5"/></svg><span><span class="t-en">Bleeding or excessive drainage</span><span class="t-es">Sangrado o supuración excesiva</span></span></li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5"/></svg><span><span class="t-en">Wound redness or signs of infection</span><span class="t-es">La herida roja o con señales de infección</span></span></li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5"/></svg><span><span class="t-en">Fever above 101.5&deg;F (38.6&deg;C)</span><span class="t-es">Fiebre mayor de 101.5&deg;F (38.6&deg;C)</span></span></li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5"/></svg><span><span class="t-en">Poor urine output or fewer wet diapers</span><span class="t-es">Poca orina o menos pañales mojados</span></span></li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5"/></svg><span><span class="t-en">Vomiting</span><span class="t-es">Vómitos</span></span></li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5"/></svg><span><span class="t-en">More pain than seems reasonable</span><span class="t-es">Más dolor del que parece razonable</span></span></li>
+      </ul>
+      <div class="callrow">
+        <a class="btn btn-call" href="tel:+13056628320">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.2 1l-2.3 2.3z"/></svg>
+          <span class="t-en">Call office</span><span class="t-es">Llamar oficina</span>
+        </a>
+        <a class="btn btn-911" href="tel:911">
+          <span class="t-en">Emergency · 911</span><span class="t-es">Emergencia · 911</span>
+        </a>
+      </div>
+      <p class="note"><span class="t-en">Office: (305) 662-8320 — questions about the surgery? Call the nurse practitioner or surgeon caring for your child.</span><span class="t-es">Oficina: (305) 662-8320 — ¿preguntas sobre la cirugía? Llame a la enfermera de práctica avanzada o al cirujano de su hijo/a.</span></p>
+    </section>
+
+    <!-- VARIABLE NUMBERS NOTE -->
+    <div class="pill-info">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11 9h2V7h-2v2zm1 13C6.5 22 2 17.5 2 12S6.5 2 12 2s10 4.5 10 10-4.5 10-10 10zm-1-5h2v-6h-2v6z"/></svg>
+      <div>
+        <span class="t-en">Where you see a highlighted blank like <span class="fill">__ days</span> or <span class="fill">__ mg</span>, use the number your nurse wrote on your discharge sheet or told you at discharge.</span>
+        <span class="t-es">Donde vea un espacio resaltado como <span class="fill">__ días</span> o <span class="fill">__ mg</span>, use el número que su enfermera escribió en su hoja de alta o le indicó al darle de alta.</span>
+      </div>
+    </div>
+
+    <!-- 1. INCISION -->
+    <section class="section" id="incision">
+      <h2><span class="num">1</span><span><span class="t-en">Care of the incision</span><span class="t-es">Cuidado de la herida</span></span></h2>
+      <ul class="care">
+        <li><span class="t-en">If there is a gauze dressing, gently peel it off in <span class="fill">__ days</span>, if it is still in place.</span><span class="t-es">Si tiene una gasa sobre la herida, remuévala suavemente en <span class="fill">__ días</span>, si todavía está puesta.</span></li>
+        <li><span class="t-en">Begin bathing normally at <span class="fill">__ days</span>.</span><span class="t-es">Puede empezar a bañar normalmente en <span class="fill">__ días</span>.</span></li>
+        <li><span class="t-en">Steri-strips (the small "butterfly" tapes across the wound) fall off on their own as your child bathes — do not pull them off.</span><span class="t-es">Las vendas pequeñas ("steri-strips" / tipo mariposa) se desprenden solas cuando el niño/a se baña — no las remueva.</span></li>
+      </ul>
+    </section>
+
+    <!-- 2. BATHING -->
+    <section class="section" id="bathing">
+      <h2><span class="num">2</span><span><span class="t-en">Bathing</span><span class="t-es">Baño</span></span></h2>
+      <p>
+        <span class="t-en">Sponge bathe your child until regular bathing begins. After that, cleanse gently in the shower — do not rub or pull the wound. Let soap and water flow gently over the wound or steri-strips.</span>
+        <span class="t-es">Dele baño de esponja hasta que pueda bañarse normalmente. Después, límpielo/a suavemente en la ducha — no frote ni jale la herida. Deje que el jabón y el agua corran suavemente sobre la herida o los steri-strips.</span>
+      </p>
+      <h3><span class="t-en">If your child had a laparoscopy</span><span class="t-es">Si su hijo/a tuvo una laparoscopía</span></h3>
+      <ul class="care">
+        <li><span class="t-en">There is a clear pressure dressing over a cotton ball on the belly button.</span><span class="t-es">Hay un vendaje transparente cubriendo un algodoncito sobre el ombligo.</span></li>
+        <li><span class="t-en">Leave this dressing in place for <span class="fill">__ days</span>, then remove it and bathe.</span><span class="t-es">Deje el vendaje puesto por <span class="fill">__ días</span>, luego remuévalo y bañe.</span></li>
+        <li><span class="t-en">Wash the belly button with soap and water. Use a finger to gently clean inside the navel. You may use peroxide on a Q-tip to remove any debris or scab.</span><span class="t-es">Lave el ombligo con jabón y agua. Use el dedo para limpiar suavemente dentro del ombligo. Puede usar agua oxigenada con un Q-tip para quitar cualquier costra o residuo.</span></li>
+        <li><span class="t-en">If the dressing becomes soiled with bloody drainage before the <span class="fill">__ day</span>, call the office for instructions.</span><span class="t-es">Si el vendaje se ensucia con drenaje sangriento antes del <span class="fill">__ día</span>, llame a la oficina para instrucciones.</span></li>
+      </ul>
+    </section>
+
+    <!-- 3. FEEDING -->
+    <section class="section" id="feeding">
+      <h2><span class="num">3</span><span><span class="t-en">Feeding after surgery</span><span class="t-es">Alimentación después de la cirugía</span></span></h2>
+      <p>
+        <span class="t-en">Your child can eat a normal diet for their age, though appetite may be low for 24–36 hours. If so, give frequent small amounts of clear liquids (juice, soda, sugar water).</span>
+        <span class="t-es">Su hijo/a puede comer una dieta normal para su edad, aunque el apetito puede estar bajo por 24–36 horas. En ese caso, déle pequeñas cantidades frecuentes de líquidos claros (jugo, gaseosa, agua con azúcar).</span>
+      </p>
+      <p>
+        <span class="t-en">Constipation is common after surgery — anesthesia and pain medicine can contribute. Give plenty of clear liquids. You may use a glycerin suppository if needed.</span>
+        <span class="t-es">El estreñimiento es común después de la cirugía — la anestesia y el medicamento para el dolor pueden contribuir. Déle muchos líquidos claros. Puede usar un supositorio de glicerina si es necesario.</span>
+      </p>
+    </section>
+
+    <!-- 4. PAIN -->
+    <section class="section" id="pain">
+      <h2><span class="num">4</span><span><span class="t-en">Pain management</span><span class="t-es">Manejo del dolor</span></span></h2>
+      <ul class="care">
+        <li><span class="t-en">Fill your prescription if you received one.</span><span class="t-es">Surta la receta en la farmacia si recibió una.</span></li>
+        <li><span class="t-en">Give ibuprofen (Motrin, Advil, Pediprofen) <span class="fill">__ mg</span> with food and a full glass of water every <span class="fill">__ hours</span>, for <span class="fill">__ days</span>.</span><span class="t-es">Déle ibuprofeno (Motrin, Advil, Pediprofen) <span class="fill">__ mg</span> con comida y un vaso lleno de agua cada <span class="fill">__ horas</span>, por <span class="fill">__ días</span>.</span></li>
+        <li><span class="t-en">If pain continues, you may also give acetaminophen (Tylenol) <span class="fill">__ mg</span> at the same time, every <span class="fill">__ hours</span>.</span><span class="t-es">Si el dolor continúa, también puede dar acetaminofén (Tylenol) <span class="fill">__ mg</span> al mismo tiempo, cada <span class="fill">__ horas</span>.</span></li>
+        <li><span class="t-en">Follow the Medication Reconciliation form you signed at discharge.</span><span class="t-es">Siga el formulario "Medication Reconciliation" que firmó al darle de alta.</span></li>
+        <li><span class="t-en">Give pain medicine freely for the first 24–48 hours, then as needed for 3–4 days. Call if your child is in more pain than seems reasonable.</span><span class="t-es">Dé el medicamento para el dolor libremente las primeras 24–48 horas, luego según sea necesario por 3–4 días. Llame si el dolor parece excesivo.</span></li>
+        <li><span class="t-en">Your child should not return to school while still needing a narcotic pain medicine (such as Percocet or Tylenol #3).</span><span class="t-es">Su hijo/a no debe regresar a la escuela mientras todavía necesite un narcótico para el dolor (como Percocet o Tylenol #3).</span></li>
+      </ul>
+    </section>
+
+    <!-- 5. ACTIVITY -->
+    <section class="section" id="activity">
+      <h2><span class="num">5</span><span><span class="t-en">Activity</span><span class="t-es">Actividad</span></span></h2>
+      <div class="agegrid">
+        <div class="agecard">
+          <b><span class="t-en">0–8 months</span><span class="t-es">0–8 meses</span></b>
+          <span class="t-en">Normal activity for age.</span><span class="t-es">Actividad normal para su edad.</span>
+        </div>
+        <div class="agecard">
+          <b><span class="t-en">8 months – 2½ years</span><span class="t-es">8 meses – 2½ años</span></b>
+          <span class="t-en">Watch for toddler accidents. No riding toys or monkey bars.</span><span class="t-es">Cuidado con accidentes. Sin juguetes de montar ni "monkey bars".</span>
+        </div>
+        <div class="agecard">
+          <b><span class="t-en">2½ years and up</span><span class="t-es">2½ años y más</span></b>
+          <span class="t-en">Quiet supervised play for 24–48 hours. No contact sports or vigorous activity for 2 weeks unless your doctor says otherwise.</span><span class="t-es">Juego tranquilo y supervisado por 24–48 horas. Sin deportes de contacto ni actividad vigorosa por 2 semanas, salvo que su médico indique lo contrario.</span>
+        </div>
+        <div class="agecard">
+          <b><span class="t-en">Daycare / School</span><span class="t-es">Guardería / Escuela</span></b>
+          <span class="t-en">Closely supervise until the post-op visit. May return to school 48–72 hours after surgery. No P.E. for 2 weeks unless your doctor says otherwise.</span><span class="t-es">Supervise de cerca hasta la cita de control. Puede regresar a la escuela 48–72 horas después. Sin educación física por 2 semanas, salvo indicación de su médico.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOLLOW UP -->
+    <section class="followup">
+      <h2><span class="t-en">Your follow-up appointment</span><span class="t-es">Su cita de control</span></h2>
+      <p><span class="t-en">Call the office the next working day after surgery to confirm. Your team will give you these details:</span><span class="t-es">Llame a la oficina el siguiente día hábil después de la cirugía para confirmar. Su equipo le dará estos datos:</span></p>
+      <div class="row"><span><span class="t-en">In</span><span class="t-es">En</span></span><div class="line"></div><span style="flex:0 0 auto"><span class="t-en">days</span><span class="t-es">días</span></span></div>
+      <div class="row"><span><span class="t-en">Date / time</span><span class="t-es">Fecha / hora</span></span><div class="line"></div></div>
+      <div class="row"><span><span class="t-en">Location</span><span class="t-es">Lugar</span></span><div class="line"></div></div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="disclaimer">
+        <span class="t-en">This page summarizes your discharge instructions and does not replace the advice of your surgical team. When in doubt, call the office. In a life-threatening emergency, call 911.</span>
+        <span class="t-es">Esta página resume sus instrucciones de alta y no reemplaza el consejo de su equipo quirúrgico. Ante cualquier duda, llame a la oficina. En una emergencia que amenace la vida, llame al 911.</span>
+      </div>
+      <div class="org">Juan L. Calisto, M.D. · <span class="t-en">Pediatric Surgery</span><span class="t-es">Cirugía Pediátrica</span></div>
+      <div><span class="t-en">Office</span><span class="t-es">Oficina</span>: <a href="tel:+13056628320">(305) 662-8320</a></div>
+      <div style="margin-top:8px"><span class="t-en">Charitable surgical care across Latin America</span><span class="t-es">Cirugía solidaria en América Latina</span> · <a href="https://reddecorazones.org" target="_blank" rel="noopener">Red de Corazones</a></div>
+    </footer>
+
+  </div>
+
+  <!-- MOBILE ACTION BAR -->
+  <nav class="actionbar" aria-label="Quick actions">
+    <a class="a-call" href="tel:+13056628320">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.2 1l-2.3 2.3z"/></svg>
+      <span class="t-en">Call office</span><span class="t-es">Llamar oficina</span>
+    </a>
+    <a class="a-flag" href="#when-to-call">
+      <span class="t-en">⚠ When to call</span><span class="t-es">⚠ Cuándo llamar</span>
+    </a>
+  </nav>
+
+<script>
+  function setLang(lang){
+    document.body.classList.toggle('lang-es', lang === 'es');
+    document.body.classList.toggle('lang-en', lang === 'en');
+    document.documentElement.lang = lang;
+    document.getElementById('btn-en').setAttribute('aria-pressed', lang === 'en');
+    document.getElementById('btn-es').setAttribute('aria-pressed', lang === 'es');
+    try { localStorage.setItem('calisto-lang', lang); } catch(e){}
+  }
+  // Restore preference, then fall back to the phone's language if Spanish.
+  (function(){
+    var saved = null;
+    try { saved = localStorage.getItem('calisto-lang'); } catch(e){}
+    if(!saved){
+      var nav = (navigator.language || 'en').toLowerCase();
+      saved = nav.indexOf('es') === 0 ? 'es' : 'en';
+    }
+    setLang(saved);
+  })();
+</script>
+</body>
+</html>
