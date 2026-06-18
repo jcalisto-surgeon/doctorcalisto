@@ -174,6 +174,26 @@
   .followup .row span{color:#9FB0C6;font-size:13px;flex:0 0 92px}
   .followup .row .line{flex:1;border-bottom:1.5px dashed rgba(255,255,255,.4);height:18px}
 
+  /* ---------- practice / affiliations ---------- */
+  .practice{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);padding:22px;margin-bottom:16px;text-align:center;
+  }
+  .practice .pname{font-family:"Fraunces",serif;font-weight:600;font-size:19px;color:var(--navy);margin:0 0 4px}
+  .practice .ptag{color:var(--muted);font-size:14px;margin:0 0 4px}
+  .practice .affil{border-top:1px solid var(--line);margin-top:18px;padding-top:18px}
+  .practice .affil p{margin:0;color:var(--navy);font-weight:500;font-size:14.5px}
+  .badges{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;border-top:1px solid var(--line);margin-top:18px;padding-top:18px}
+  .badge{background:var(--gold-soft);color:#6b4f11;border-radius:999px;padding:8px 14px;font:600 13px "Inter",sans-serif}
+  .links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:18px}
+  .links a{
+    display:inline-flex;align-items:center;text-decoration:none;
+    font:600 14px "Inter",sans-serif;color:var(--navy);
+    background:#FCFAF5;border:1px solid var(--line);border-radius:999px;
+    padding:9px 16px;min-height:44px;
+  }
+  .links a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
   /* ---------- footer ---------- */
   footer{padding:24px 0 40px;text-align:center;color:var(--muted);font-size:13px;line-height:1.7}
   footer .disclaimer{
@@ -246,6 +266,7 @@
       <a href="#feeding"><span class="t-en">Feeding</span><span class="t-es">Alimentación</span></a>
       <a href="#pain"><span class="t-en">Pain</span><span class="t-es">Dolor</span></a>
       <a href="#activity"><span class="t-en">Activity</span><span class="t-es">Actividad</span></a>
+      <a href="#what-to-expect"><span class="t-en">What to expect</span><span class="t-es">Qué esperar</span></a>
     </nav>
 
     <!-- RED FLAG ALERT -->
@@ -275,21 +296,12 @@
       <p class="note"><span class="t-en">Office: (305) 662-8320 — questions about the surgery? Call the nurse practitioner or surgeon caring for your child.</span><span class="t-es">Oficina: (305) 662-8320 — ¿preguntas sobre la cirugía? Llame a la enfermera de práctica avanzada o al cirujano de su hijo/a.</span></p>
     </section>
 
-    <!-- VARIABLE NUMBERS NOTE -->
-    <div class="pill-info">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11 9h2V7h-2v2zm1 13C6.5 22 2 17.5 2 12S6.5 2 12 2s10 4.5 10 10-4.5 10-10 10zm-1-5h2v-6h-2v6z"/></svg>
-      <div>
-        <span class="t-en">Where you see a highlighted blank like <span class="fill">__ days</span> or <span class="fill">__ mg</span>, use the number your nurse wrote on your discharge sheet or told you at discharge.</span>
-        <span class="t-es">Donde vea un espacio resaltado como <span class="fill">__ días</span> o <span class="fill">__ mg</span>, use el número que su enfermera escribió en su hoja de alta o le indicó al darle de alta.</span>
-      </div>
-    </div>
-
     <!-- 1. INCISION -->
     <section class="section" id="incision">
       <h2><span class="num">1</span><span><span class="t-en">Care of the incision</span><span class="t-es">Cuidado de la herida</span></span></h2>
       <ul class="care">
-        <li><span class="t-en">If there is a gauze dressing, gently peel it off in <span class="fill">__ days</span>, if it is still in place.</span><span class="t-es">Si tiene una gasa sobre la herida, remuévala suavemente en <span class="fill">__ días</span>, si todavía está puesta.</span></li>
-        <li><span class="t-en">Begin bathing normally at <span class="fill">__ days</span>.</span><span class="t-es">Puede empezar a bañar normalmente en <span class="fill">__ días</span>.</span></li>
+        <li><span class="t-en">If there is a gauze dressing, gently peel it off in <span class="fill">5 days</span>, if it is still in place.</span><span class="t-es">Si tiene una gasa sobre la herida, remuévala suavemente en <span class="fill">5 días</span>, si todavía está puesta.</span></li>
+        <li><span class="t-en">Begin bathing normally at <span class="fill">5 days</span>.</span><span class="t-es">Puede empezar a bañar normalmente en <span class="fill">5 días</span>.</span></li>
         <li><span class="t-en">Steri-strips (the small "butterfly" tapes across the wound) fall off on their own as your child bathes — do not pull them off.</span><span class="t-es">Las vendas pequeñas ("steri-strips" / tipo mariposa) se desprenden solas cuando el niño/a se baña — no las remueva.</span></li>
       </ul>
     </section>
@@ -304,9 +316,9 @@
       <h3><span class="t-en">If your child had a laparoscopy</span><span class="t-es">Si su hijo/a tuvo una laparoscopía</span></h3>
       <ul class="care">
         <li><span class="t-en">There is a clear pressure dressing over a cotton ball on the belly button.</span><span class="t-es">Hay un vendaje transparente cubriendo un algodoncito sobre el ombligo.</span></li>
-        <li><span class="t-en">Leave this dressing in place for <span class="fill">__ days</span>, then remove it and bathe.</span><span class="t-es">Deje el vendaje puesto por <span class="fill">__ días</span>, luego remuévalo y bañe.</span></li>
+        <li><span class="t-en">Leave this dressing in place for <span class="fill">5 days</span>, then remove it and bathe.</span><span class="t-es">Deje el vendaje puesto por <span class="fill">5 días</span>, luego remuévalo y bañe.</span></li>
         <li><span class="t-en">Wash the belly button with soap and water. Use a finger to gently clean inside the navel. You may use peroxide on a Q-tip to remove any debris or scab.</span><span class="t-es">Lave el ombligo con jabón y agua. Use el dedo para limpiar suavemente dentro del ombligo. Puede usar agua oxigenada con un Q-tip para quitar cualquier costra o residuo.</span></li>
-        <li><span class="t-en">If the dressing becomes soiled with bloody drainage before the <span class="fill">__ day</span>, call the office for instructions.</span><span class="t-es">Si el vendaje se ensucia con drenaje sangriento antes del <span class="fill">__ día</span>, llame a la oficina para instrucciones.</span></li>
+        <li><span class="t-en">If the dressing becomes soiled with bloody drainage before the <span class="fill">5th day</span>, call the office for instructions.</span><span class="t-es">Si el vendaje se ensucia con drenaje sangriento antes del <span class="fill">5.º día</span>, llame a la oficina para instrucciones.</span></li>
       </ul>
     </section>
 
@@ -328,8 +340,8 @@
       <h2><span class="num">4</span><span><span class="t-en">Pain management</span><span class="t-es">Manejo del dolor</span></span></h2>
       <ul class="care">
         <li><span class="t-en">Fill your prescription if you received one.</span><span class="t-es">Surta la receta en la farmacia si recibió una.</span></li>
-        <li><span class="t-en">Give ibuprofen (Motrin, Advil, Pediprofen) <span class="fill">__ mg</span> with food and a full glass of water every <span class="fill">__ hours</span>, for <span class="fill">__ days</span>.</span><span class="t-es">Déle ibuprofeno (Motrin, Advil, Pediprofen) <span class="fill">__ mg</span> con comida y un vaso lleno de agua cada <span class="fill">__ horas</span>, por <span class="fill">__ días</span>.</span></li>
-        <li><span class="t-en">If pain continues, you may also give acetaminophen (Tylenol) <span class="fill">__ mg</span> at the same time, every <span class="fill">__ hours</span>.</span><span class="t-es">Si el dolor continúa, también puede dar acetaminofén (Tylenol) <span class="fill">__ mg</span> al mismo tiempo, cada <span class="fill">__ horas</span>.</span></li>
+        <li><span class="t-en">Give ibuprofen (Motrin, Advil, Pediprofen) as instructed on the bottle, with food and a full glass of water, every <span class="fill">6 hours</span>, for <span class="fill">2 days</span>.</span><span class="t-es">Déle ibuprofeno (Motrin, Advil, Pediprofen) según las instrucciones del frasco, con comida y un vaso lleno de agua, cada <span class="fill">6 horas</span>, por <span class="fill">2 días</span>.</span></li>
+        <li><span class="t-en">If pain continues, you may also give acetaminophen (Tylenol) as instructed on the bottle at the same time, alternating, every <span class="fill">6 hours</span>.</span><span class="t-es">Si el dolor continúa, también puede dar acetaminofén (Tylenol) según las instrucciones del frasco al mismo tiempo, alternando, cada <span class="fill">6 horas</span>.</span></li>
         <li><span class="t-en">Follow the Medication Reconciliation form you signed at discharge.</span><span class="t-es">Siga el formulario "Medication Reconciliation" que firmó al darle de alta.</span></li>
         <li><span class="t-en">Give pain medicine freely for the first 24–48 hours, then as needed for 3–4 days. Call if your child is in more pain than seems reasonable.</span><span class="t-es">Dé el medicamento para el dolor libremente las primeras 24–48 horas, luego según sea necesario por 3–4 días. Llame si el dolor parece excesivo.</span></li>
         <li><span class="t-en">Your child should not return to school while still needing a narcotic pain medicine (such as Percocet or Tylenol #3).</span><span class="t-es">Su hijo/a no debe regresar a la escuela mientras todavía necesite un narcótico para el dolor (como Percocet o Tylenol #3).</span></li>
@@ -359,13 +371,43 @@
       </div>
     </section>
 
+    <!-- 6. WHAT TO EXPECT -->
+    <section class="section" id="what-to-expect">
+      <h2><span class="num">6</span><span><span class="t-en">What to expect at home</span><span class="t-es">Qué esperar en casa</span></span></h2>
+      <ul class="care">
+        <li><span class="t-en">A low-grade temperature, tiredness, low appetite, and mild bruising or swelling around the incision are normal in the first few days.</span><span class="t-es">Una fiebre baja, cansancio, poco apetito, y moretones o hinchazón leve alrededor de la herida son normales los primeros días.</span></li>
+        <li><span class="t-en">Once the scar has healed, keep it out of direct sun or use sunscreen for 6–12 months — this helps it fade and prevents darkening.</span><span class="t-es">Una vez que la cicatriz haya sanado, manténgala fuera del sol directo o use protector solar por 6–12 meses — esto ayuda a que se aclare y evita que se oscurezca.</span></li>
+        <li><span class="t-en">If tissue was sent to the lab, the results will be discussed at your follow-up visit.</span><span class="t-es">Si se envió tejido al laboratorio, los resultados se conversarán en su cita de control.</span></li>
+        <li><span class="t-en">For urgent questions after office hours, call the office number — the answering service will reach the surgeon on call.</span><span class="t-es">Para preguntas urgentes fuera del horario de oficina, llame al número de la oficina — el servicio de mensajes contactará al cirujano de turno.</span></li>
+      </ul>
+    </section>
+
     <!-- FOLLOW UP -->
     <section class="followup">
       <h2><span class="t-en">Your follow-up appointment</span><span class="t-es">Su cita de control</span></h2>
-      <p><span class="t-en">Call the office the next working day after surgery to confirm. Your team will give you these details:</span><span class="t-es">Llame a la oficina el siguiente día hábil después de la cirugía para confirmar. Su equipo le dará estos datos:</span></p>
-      <div class="row"><span><span class="t-en">In</span><span class="t-es">En</span></span><div class="line"></div><span style="flex:0 0 auto"><span class="t-en">days</span><span class="t-es">días</span></span></div>
+      <p><span class="t-en">Your appointment is in <b style="color:#fff">2 weeks</b>. Call the office to schedule it. Your team will confirm these details:</span><span class="t-es">Su cita es en <b style="color:#fff">2 semanas</b>. Llame a la oficina para programarla. Su equipo confirmará estos datos:</span></p>
       <div class="row"><span><span class="t-en">Date / time</span><span class="t-es">Fecha / hora</span></span><div class="line"></div></div>
       <div class="row"><span><span class="t-en">Location</span><span class="t-es">Lugar</span></span><div class="line"></div></div>
+    </section>
+
+    <!-- PRACTICE / AFFILIATIONS -->
+    <section class="practice">
+      <div class="pname">Miami Associates in Pediatric Surgery, P.A.</div>
+      <p class="ptag"><a href="https://www.pedisurgery.com" target="_blank" rel="noopener">www.pedisurgery.com</a></p>
+
+      <div class="affil">
+        <p><span class="t-en">Proud to be the pediatric surgeons at Nicklaus Children's Hospital</span><span class="t-es">Orgullosos de ser los cirujanos pediátricos del Nicklaus Children's Hospital</span></p>
+      </div>
+
+      <div class="badges">
+        <span class="badge">U.S. News &amp; World Report — Best Hospitals 2025–2026</span>
+        <span class="badge">Castle Connolly 2026 Top Doctors</span>
+      </div>
+
+      <div class="links">
+        <a href="https://www.doctorcalisto.com" target="_blank" rel="noopener">www.doctorcalisto.com</a>
+        <a href="https://www.instagram.com/dr.calisto" target="_blank" rel="noopener">Instagram: @dr.calisto</a>
+      </div>
     </section>
 
     <!-- FOOTER -->
