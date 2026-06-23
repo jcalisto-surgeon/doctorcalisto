@@ -227,6 +227,53 @@
     .reveal{opacity:1 !important;transform:none !important;transition:none}
     .btn .arr{transition:none}
   }
+  /* ============ PUBLICATIONS ============ */
+  .pubs{background:var(--parchment)}
+  .pubs .sec-head{margin-bottom:14px}
+  .pubs .lead{color:var(--slate);font-weight:300;max-width:60ch;margin-bottom:8px}
+  .stat-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:34px 0 54px}
+  .scard{background:#fff;border:1px solid var(--parchment-2);border-left:3px solid var(--gold);border-radius:2px;padding:22px}
+  .scard .n{font-family:var(--serif);font-size:2.1rem;color:var(--crimson);line-height:1}
+  .scard .l{font-size:.8rem;color:var(--slate);margin-top:8px;line-height:1.4;font-weight:300}
+  .pub-panels{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:60px}
+  .pub-panel{background:#fff;border:1px solid var(--parchment-2);border-radius:2px;padding:26px}
+  .pub-panel h3{font-family:var(--sans);font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:14px}
+  .pub-panel ul{list-style:none}
+  .pub-panel li{font-size:.94rem;color:var(--ink);padding:10px 0;border-top:1px solid var(--parchment-2);font-weight:300}
+  .pub-panel li:first-child{border-top:0}
+  .pub-panel li span{display:block;color:var(--mist);font-size:.78rem;margin-top:3px}
+  .pub-sub{font-family:var(--serif);font-size:1.7rem;margin-bottom:4px;color:var(--ink)}
+  .pub-subnote{color:var(--slate);font-size:.95rem;margin-bottom:26px;font-weight:300}
+  .feat{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-bottom:54px}
+  .fcard{background:#fff;border:1px solid var(--parchment-2);border-radius:2px;padding:24px;display:flex;flex-direction:column}
+  .fcard .tag{align-self:flex-start;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;background:rgba(201,162,75,.16);color:#8a6c25;font-weight:600;padding:5px 11px;border-radius:999px;margin-bottom:14px}
+  .fcard .t{font-size:1.02rem;line-height:1.36;font-weight:500;margin-bottom:12px;color:var(--ink)}
+  .fcard .meta{margin-top:auto;font-size:.85rem;color:var(--slate)}
+  .fcard a,.ref a{color:var(--crimson);font-weight:600;text-decoration:none}
+  .fcard a:hover,.ref a:hover{text-decoration:underline}
+  .pub-group{margin-bottom:40px}
+  .pub-group h4{font-family:var(--sans);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);border-bottom:2px solid var(--gold);display:inline-block;padding-bottom:6px;margin-bottom:16px}
+  .ref{font-size:.92rem;line-height:1.55;padding:12px 0;border-bottom:1px solid var(--parchment-2);color:var(--ink);font-weight:300}
+  .ref .yr{color:var(--crimson);font-weight:600;margin-right:8px}
+  .ref em{color:var(--slate)}
+  .pub-toggle{background:none;border:1px solid var(--slate);color:var(--ink);font:inherit;font-size:.85rem;padding:11px 22px;border-radius:2px;cursor:pointer;margin-top:10px}
+  .pub-toggle:hover{border-color:var(--gold);color:var(--gold)}
+  .pub-more{display:none}
+  .pub-more.open{display:block}
+  .pub-source{font-size:.78rem;color:var(--mist);margin-top:36px;line-height:1.5;font-weight:300}
+  @media(max-width:920px){
+    .stat-cards{grid-template-columns:1fr 1fr}
+    .pub-panels,.feat{grid-template-columns:1fr}
+  }
+  @media(max-width:560px){.stat-cards{grid-template-columns:1fr}}
+  /* button variant for light backgrounds */
+  .btn-dark{border:1px solid var(--navy);color:var(--navy)}
+  .btn-dark:hover{background:var(--navy);color:var(--parchment)}
+  /* footer links */
+  .foot-links{display:flex;gap:22px;flex-wrap:wrap}
+  .foot-links a{font-size:.82rem;letter-spacing:.04em;color:var(--mist);transition:color .25s}
+  .foot-links a:hover{color:var(--gold)}
+  @media(max-width:560px){.foot-links{gap:14px}}
 </style>
 </head>
 <body>
@@ -239,6 +286,8 @@
       <a href="#hirschsprung">Hirschsprung</a>
       <a href="#arm">Anorectal Malformations</a>
       <a href="#ibd">Inflammatory Bowel Disease</a>
+      <a href="#publications">Publications</a>
+      <a href="faq.html">FAQ</a>
       <a href="#about">About</a>
       <a href="#contact" class="nav-cta">Refer a Patient</a>
     </nav>
@@ -261,6 +310,7 @@
       <div class="cta-row">
         <a href="#contact" class="btn btn-gold">Refer a patient <span class="arr">&rarr;</span></a>
         <a href="#hirschsprung" class="btn btn-ghost">Explore conditions</a>
+        <a href="instructions.html" class="btn btn-ghost">Patient guide <span class="arr">&rarr;</span></a>
       </div>
     </div>
     <div class="hero-portrait">
@@ -389,6 +439,111 @@
   </div>
 </section>
 
+<!-- ============ PUBLICATIONS & CREDENTIALS ============ -->
+<section class="pubs" id="publications">
+  <div class="wrap reveal">
+    <span class="eyebrow">Research &amp; Credentials</span>
+    <div class="sec-head">
+      <h2>Publications &amp; Academic Work</h2>
+    </div>
+    <p class="lead">Triple board-certified by the American Board of Surgery, with a record of peer-reviewed research in pediatric colorectal surgery, pelvic reconstruction, and minimally invasive and robotic technique &mdash; alongside more than 120 pro bono operations for children across Latin America.</p>
+
+    <div class="stat-cards">
+      <div class="scard"><div class="n">3&times;</div><div class="l">Board-certified &mdash; Pediatric Surgery, Surgical Critical Care &amp; General Surgery</div></div>
+      <div class="scard"><div class="n">24+</div><div class="l">Peer-reviewed journal articles</div></div>
+      <div class="scard"><div class="n">120+</div><div class="l">Pro bono pediatric operations across Latin America</div></div>
+      <div class="scard"><div class="n">2018</div><div class="l">Founding Director, Colorectal Center at Nicklaus Children&rsquo;s Hospital</div></div>
+    </div>
+
+    <div class="pub-panels">
+      <div class="pub-panel">
+        <h3>Training &amp; Certification</h3>
+        <ul>
+          <li>Pediatric General &amp; Thoracic Surgery <span>University of Pittsburgh &mdash; Children&rsquo;s Hospital of Pittsburgh</span></li>
+          <li>Pediatric Surgical Critical Care <span>University of Pittsburgh</span></li>
+          <li>General &amp; Thoracic Surgery <span>University of Oklahoma Health Sciences Center</span></li>
+          <li>Surgical Endoscopy Fellowship <span>Weill Cornell Medical College, New York</span></li>
+          <li>American Board of Surgery <span>Pediatric Surgery &middot; Surgical Critical Care &middot; General Surgery</span></li>
+        </ul>
+      </div>
+      <div class="pub-panel">
+        <h3>Leadership &amp; Service</h3>
+        <ul>
+          <li>Director, Colorectal Center <span>Nicklaus Children&rsquo;s Hospital, Miami &mdash; Florida&rsquo;s first comprehensive pediatric colorectal program</span></li>
+          <li>Director, Red de Corazones USA <span>Surgical care &amp; education across Peru, Colombia, Ecuador &amp; Brazil</span></li>
+          <li>American Pediatric Surgical Association <span>Member since 2012</span></li>
+          <li>American Society of Colon &amp; Rectal Surgeons <span>Member since 2009</span></li>
+          <li>International Pediatric Endosurgery Group <span>Member since 2017</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="pub-sub">Selected Publications</h3>
+    <p class="pub-subnote">Representative work in pediatric colorectal and pelvic reconstructive surgery.</p>
+    <div class="feat">
+      <div class="fcard">
+        <span class="tag">Hirschsprung Disease</span>
+        <p class="t">Association of small intestinal atresia and Hirschsprung disease in a multi-institutional colorectal registry</p>
+        <p class="meta"><em>Journal of Pediatric Surgery</em>, 2026 &middot; <a href="https://doi.org/10.1016/j.jpedsurg.2026.163228" target="_blank" rel="noopener">View &nearr;</a></p>
+      </div>
+      <div class="fcard">
+        <span class="tag">Anorectal Malformations</span>
+        <p class="t">Assessing the previously repaired patient with an anorectal malformation who is not doing well</p>
+        <p class="meta"><em>Seminars in Pediatric Surgery</em>, 2020 &middot; <a href="https://doi.org/10.1016/j.sempedsurg.2020.150995" target="_blank" rel="noopener">View &nearr;</a></p>
+      </div>
+      <div class="fcard">
+        <span class="tag">Pelvic Reconstruction</span>
+        <p class="t">Vaginal agenesis and rectovestibular fistula: distal ileum for vaginal replacement, preserving the natural fecal reservoir</p>
+        <p class="meta"><em>Journal of Pediatric Surgery</em>, 2016 &middot; <a href="https://doi.org/10.1016/j.jpedsurg.2016.08.003" target="_blank" rel="noopener">View &nearr;</a></p>
+      </div>
+      <div class="fcard">
+        <span class="tag">Hirschsprung Disease</span>
+        <p class="t">The anal canal is the fine line between &ldquo;fecal incontinence and colitis&rdquo; after a pull-through for Hirschsprung disease</p>
+        <p class="meta"><em>Journal of Pediatric Surgery</em>, 2017 &middot; <a href="https://doi.org/10.1016/j.jpedsurg.2017.08.040" target="_blank" rel="noopener">View &nearr;</a></p>
+      </div>
+    </div>
+
+    <div class="pub-group">
+      <h4>Peer-Reviewed Journal Articles</h4>
+      <div class="ref"><span class="yr">2026</span> Read MA, Crady RC, Hussaini SF, &hellip; <strong>Calisto JL</strong>, et al. Association of small intestinal atresia and Hirschsprung disease in a multi-institutional colorectal registry. <em>J Pediatr Surg</em>. <a href="https://doi.org/10.1016/j.jpedsurg.2026.163228" target="_blank" rel="noopener">doi</a></div>
+      <div class="ref"><span class="yr">2025</span> Guzman RA, Wallace BA, Othman F, Lake C, <strong>Calisto J</strong>. Mesenteric lipoma-induced small bowel obstruction in a pediatric patient: a rare case of midgut volvulus. <em>Cureus</em>. <a href="https://doi.org/10.7759/cureus.80058" target="_blank" rel="noopener">doi</a></div>
+      <div class="ref"><span class="yr">2024</span> Siretskiy R, Alonso D, <strong>Calisto J</strong>, Lau PE. Complication of gastric balloon in an adolescent patient: a case report. <em>Cureus</em>. <a href="https://doi.org/10.7759/cureus.73743" target="_blank" rel="noopener">doi</a></div>
+      <div class="ref"><span class="yr">2023</span> Hey MT, Mayhew M, <strong>Calisto J</strong>, Shaffiey S, Alkhoury F. The safe introduction of robotic surgery in a free-standing children&rsquo;s hospital. <em>J Robot Surg</em>. 17(5):2369&ndash;2374.</div>
+      <div class="ref"><span class="yr">2023</span> Hey MT, Mayhew M, <strong>Calisto J</strong>, Alkhoury F. Pediatric single-incision robotic cholecystectomy: a 6-year update from a single institution. <em>J Laparoendosc Adv Surg Tech A</em>. 33(7):698&ndash;702.</div>
+      <div class="ref"><span class="yr">2023</span> Pasar&oacute;n R, <strong>Calisto J</strong>, Gurucharri BP, Levitt MA. Health literacy implementation principles: pediatric colorectal program development. <em>J Pediatr Surg Nurs</em>.</div>
+      <div class="ref"><span class="yr">2022</span> Glithero KJ, Hey MT, <strong>Calisto JL</strong>, Alkhoury F, Malvezzi L, Burnweit CA. Percutaneous endoscopic gastrostomy tube placement via introducer technique is safe and effective when compared to the laparoscopic technique. <em>Pediatr Surg Int</em>. 38(12):2005&ndash;2011. <a href="https://doi.org/10.1007/s00383-022-05247-3" target="_blank" rel="noopener">doi</a></div>
+      <div class="ref"><span class="yr">2022</span> Roberts BK, Alonso D, Terp K, Metellus B, <strong>Calisto JL</strong>, Malvezzi L, Burnweit CA, Alkhoury F. Using NSQIP to improve perforated appendicitis protocol and better resource allocation. <em>Surg Pract Sci</em>. 9:100074. <a href="https://doi.org/10.1016/j.sipas.2022.100074" target="_blank" rel="noopener">doi</a></div>
+      <div class="pub-more" id="pub-more">
+        <div class="ref"><span class="yr">2021</span> Hey MT, Mayhew MM, Rico S, <strong>Calisto J</strong>, Alkhoury F. Initial experience with robotic inguinal hernia repair in the adolescent population. <em>J Laparoendosc Adv Surg Tech A</em>. 31(11):1346&ndash;1350.</div>
+        <div class="ref"><span class="yr">2021</span> Pasar&oacute;n R, <strong>Calisto J</strong>. Clostridioides difficile: diagnostic probabilities in a pediatric surgery case over time. <em>J Pediatr Surg Nurs</em>.</div>
+        <div class="ref"><span class="yr">2020</span> Lane VA, <strong>Calisto J</strong>, de Blaauw I, Calkins CM, Samuk I, Avansino JR. Assessing the previously repaired patient with an anorectal malformation who is not doing well. <em>Semin Pediatr Surg</em>. 29(6):150995. <a href="https://doi.org/10.1016/j.sempedsurg.2020.150995" target="_blank" rel="noopener">doi</a></div>
+        <div class="ref"><span class="yr">2018</span> De La Torre L, <strong>Calisto J</strong>, Ruiz-Monta&ntilde;ez A, Santos-Jasso K. Transanal endorectal approach for the treatment of idiopathic rectal prolapse in children: experience with the modified Delorme&rsquo;s procedure. <em>J Pediatr Surg</em>. <a href="https://doi.org/10.1016/j.jpedsurg.2018.10.016" target="_blank" rel="noopener">doi</a></div>
+        <div class="ref"><span class="yr">2017</span> Fusco JC, <strong>Calisto JL</strong>, Gaines BA, Malek MM. A large single-institution review of tracheoesophageal fistulae with evaluation of the use of transanastomotic feeding tubes. <em>J Pediatr Surg</em>. <a href="https://doi.org/10.1016/j.jpedsurg.2017.10.026" target="_blank" rel="noopener">doi</a></div>
+        <div class="ref"><span class="yr">2017</span> De La Torre L, Cogley K, <strong>Calisto J</strong>. The anal canal is the fine line between &ldquo;fecal incontinence and colitis&rdquo; after a pull-through for Hirschsprung disease. <em>J Pediatr Surg</em>. 52(12):2011&ndash;2017. <a href="https://doi.org/10.1016/j.jpedsurg.2017.08.040" target="_blank" rel="noopener">doi</a></div>
+        <div class="ref"><span class="yr">2016</span> De La Torre L, Cogley K, <strong>Calisto J</strong>, Zornoza M. Vaginal agenesis and rectovestibular fistula: experience utilizing distal ileum for the vaginal replacement, preserving the natural fecal reservoir. <em>J Pediatr Surg</em>. 51(11):1871&ndash;1876. <a href="https://doi.org/10.1016/j.jpedsurg.2016.08.003" target="_blank" rel="noopener">doi</a></div>
+        <div class="ref"><span class="yr">2016</span> De La Torre L, Cogley K, <strong>Calisto J</strong>, Nace G, Correa C. Primary sigmoidectomy and appendicostomy for chronic idiopathic constipation. <em>Pediatr Surg Int</em>. 32(8):767&ndash;772. <a href="https://doi.org/10.1007/s00383-016-3913-2" target="_blank" rel="noopener">doi</a></div>
+        <div class="ref"><span class="yr">2015</span> <strong>Calisto JL</strong>, Gaines B. The new science of concussion and mild brain injury in children. <em>Curr Surg Rep</em>. 3:33.</div>
+        <div class="ref"><span class="yr">2014</span> Landmann A, <strong>Calisto J</strong>, Postier R. Pancreatic neoplasm with metastatic workup (Clinical Challenge). <em>JAMA Surg</em>. 149(10):1087&ndash;1088. <a href="https://doi.org/10.1001/jamasurg.2014.846" target="_blank" rel="noopener">doi</a></div>
+        <div class="ref"><span class="yr">2011</span> <strong>Calisto JL</strong>, Kawamura J, Milsom JW. Fixation of intestinal tissue using a novel endoscopic device. <em>Surg Innov</em>. 18(1):44&ndash;47. <a href="https://doi.org/10.1177/1553350610388670" target="_blank" rel="noopener">doi</a></div>
+        <div class="ref"><span class="yr">2009</span> Barreda L, Targarona J, Milian W, Sequeiros J, Pando E, <strong>Calisto JL</strong>. Is prophylactic antibiotic therapy with imipenem effective for patients with pancreatic necrosis? A randomized controlled trial. <em>Acta Gastroenterol Latinoam</em>. 39:24&ndash;29.</div>
+        <div class="ref"><span class="yr">2008</span> <strong>Calisto JL</strong>, Tagle M, Targarona J. Autoimmune hepatitis with elevation of CA 19-9 and normalization with immunosuppressant treatment. <em>Rev Gastroenterol Peru</em>. 28(2):167&ndash;170.</div>
+      </div>
+      <button class="pub-toggle" onclick="var m=document.getElementById('pub-more');m.classList.toggle('open');this.textContent=m.classList.contains('open')?'Show fewer':'Show all journal articles';">Show all journal articles</button>
+    </div>
+
+    <div class="pub-group">
+      <h4>Book Chapters &amp; Surgical Videos</h4>
+      <div class="ref"><span class="yr">2026</span> <strong>Calisto JL</strong>. In: <em>Fundamentals of Anorectal Surgery</em>, 4th ed. (Chapter 4).</div>
+      <div class="ref"><span class="yr">2021</span> Castellan MA, <strong>Calisto J</strong>, Galvez C, et al., Gosalbez R. Robot-assisted laparoscopic Mitrofanoff and Malone procedure with both stomas located in the umbilicus. <em>Videoscopy</em>.</div>
+      <div class="ref"><span class="yr">2017</span> <strong>Calisto JL</strong>, Landmann A, Scholz S. Laparoscopic splenectomy. In: <em>SAGES Manual of Minimally Invasive Pediatric Surgery</em> (Chapter 44). Springer.</div>
+      <div class="ref"><span class="yr">2017</span> Landmann A, <strong>Calisto J</strong>, Malek MM. Combined laparoscopic&ndash;endoscopic technique for gastric diverticulectomy. <em>Videoscopy</em>.</div>
+      <div class="ref"><span class="yr">2008</span> Poggi L, <strong>Calisto JL</strong>. Cyst and abscess of the spleen. In: <em>General Surgery: Principles and International Practice</em> (Chapter 113). Springer.</div>
+    </div>
+
+    <p class="pub-source">Publication list compiled from the author&rsquo;s curriculum vitae and PubMed. DOI links point to the original articles; some entries may be available only through institutional or journal access.</p>
+  </div>
+</section>
+
 <!-- ============ CONTACT ============ -->
 <section class="contact" id="contact">
   <div class="wrap contact-grid reveal">
@@ -396,12 +551,17 @@
       <span class="eyebrow">Contact &amp; Referrals</span>
       <h2>Refer a patient or request a consultation.</h2>
       <p class="intro">Pediatricians and families are welcome to reach out directly. For complex or reoperative cases, an early conversation often changes the plan for the better.</p>
-      <a href="mailto:jlcalisto@icloud.com?subject=Patient%20Referral%20%E2%80%94%20Colorectal%20Center" class="btn btn-gold">Email the office <span class="arr">&rarr;</span></a>
+      <div class="cta-row">
+        <a href="mailto:jlcalisto@icloud.com?subject=Patient%20Referral%20%E2%80%94%20Colorectal%20Center" class="btn btn-gold">Email the office <span class="arr">&rarr;</span></a>
+        <a href="instructions.html" class="btn btn-dark">Patient guide <span class="arr">&rarr;</span></a>
+      </div>
     </div>
     <div class="contact-card">
       <div class="row"><div class="ic">&#9873;</div><div><div class="k">Colorectal Center</div><div class="v">Nicklaus Children&rsquo;s Hospital — Medical Arts Building<br>3200 SW 60th Ct, Suite 201, Miami, FL 33155</div></div></div>
       <div class="row"><div class="ic">&#9742;</div><div><div class="k">Phone</div><a class="v" href="tel:+13059659658">(305) 965-9658</a></div></div>
       <div class="row"><div class="ic">&#9993;</div><div><div class="k">Email</div><a class="v" href="mailto:jlcalisto@icloud.com">jlcalisto@icloud.com</a></div></div>
+      <div class="row"><div class="ic">&#9873;</div><div><div class="k">Hospital Profile</div><a class="v" href="https://www.nicklauschildrens.org/find-a-physician/physician-details/es/1245465863/juan-calisto-pediatric-surgery" target="_blank" rel="noopener">Nicklaus Children&rsquo;s Hospital &nearr;</a></div></div>
+      <div class="row"><div class="ic">&#9733;</div><div><div class="k">Reviews</div><a class="v" href="https://share.google/RuzJBL5KNDiAAYCN7" target="_blank" rel="noopener">Read patient reviews on Google &nearr;</a></div></div>
       <div class="row"><div class="ic">&#9825;</div><div><div class="k">Humanitarian</div><a class="v" href="https://reddecorazones.org" target="_blank" rel="noopener">Red de Corazones USA &nearr;</a></div></div>
     </div>
   </div>
@@ -410,6 +570,14 @@
 <footer class="site">
   <div class="wrap">
     <a href="#main" class="brand" style="color:var(--parchment)">Juan&nbsp;<b style="color:var(--gold)">Calisto</b>, MD</a>
+    <nav class="foot-links">
+      <a href="#publications">Publications</a>
+      <a href="faq.html">FAQ</a>
+      <a href="instructions.html">Patient Guide</a>
+      <a href="https://share.google/RuzJBL5KNDiAAYCN7" target="_blank" rel="noopener">Reviews</a>
+      <a href="https://www.nicklauschildrens.org/find-a-physician/physician-details/es/1245465863/juan-calisto-pediatric-surgery" target="_blank" rel="noopener">Hospital Profile</a>
+      <a href="#contact">Refer a Patient</a>
+    </nav>
     <div>&copy; <span id="yr"></span> Juan L. Calisto, MD — Pediatric Colorectal &amp; Pelvic Reconstructive Surgery</div>
   </div>
 </footer>
