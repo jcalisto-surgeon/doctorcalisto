@@ -1,0 +1,322 @@
+<!--
+  ============================================================================
+  FAMILY FAQ SECTION  —  doctorcalisto.com
+  ----------------------------------------------------------------------------
+  HOW TO USE
+  1. Self-contained: open in a browser to preview.
+  2. To add to your site, copy everything between the BEGIN / END markers
+     and paste it where you want it (a good spot is after the condition
+     sections, or right before "Refer a Patient").
+  3. Styles are scoped under .jc-faq so they won't affect the rest of the site.
+     Colors are CSS variables at the top — match them to your palette if needed.
+  4. The questions are click-to-expand (accordion). No libraries required.
+
+  NOTE: This is general educational information for families, not medical
+  advice. The closing note says so — keep it in.
+  ============================================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Families — Common Questions | Dr. Juan L. Calisto</title>
+<style> body { margin:0; background:#f7f6f3; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; } </style>
+</head>
+<body>
+
+<!-- ==== BEGIN: paste into your page ==== -->
+<section id="for-families" class="jc-faq">
+  <style>
+    .jc-faq {
+      --ink:#1c2b33; --muted:#5d6b72; --line:#e3e0d8;
+      --accent:#0f5e66; --accent-soft:#eef4f3; --paper:#fff; --bg:#f7f6f3;
+      background:var(--bg); color:var(--ink); padding:88px 24px; -webkit-font-smoothing:antialiased;
+    }
+    .jc-faq *{ box-sizing:border-box; }
+    .jc-faq .wrap{ max-width:880px; margin:0 auto; }
+    .jc-faq .eyebrow{ font-size:13px; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); font-weight:600; margin:0 0 12px; }
+    .jc-faq h2{ font-family:Georgia,"Times New Roman",serif; font-size:clamp(28px,4vw,40px); line-height:1.1; margin:0 0 16px; font-weight:600; }
+    .jc-faq .lead{ font-size:17px; line-height:1.6; color:var(--muted); max-width:640px; margin:0 0 44px; }
+
+    .jc-faq .tabs{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:28px; }
+    .jc-faq .tab{
+      font:inherit; font-size:14.5px; font-weight:600; cursor:pointer;
+      border:1px solid var(--line); background:var(--paper); color:var(--muted);
+      padding:10px 18px; border-radius:999px; transition:all .15s;
+    }
+    .jc-faq .tab:hover{ border-color:var(--accent); color:var(--accent); }
+    .jc-faq .tab.active{ background:var(--accent); border-color:var(--accent); color:#fff; }
+
+    .jc-faq .group{ display:none; }
+    .jc-faq .group.active{ display:block; }
+    .jc-faq .group > .intro{
+      background:var(--accent-soft); border-radius:14px; padding:20px 22px; margin:0 0 18px;
+      font-size:15.5px; line-height:1.6; color:var(--ink);
+    }
+    .jc-faq .group > .intro strong{ color:var(--accent); }
+
+    .jc-faq details{
+      background:var(--paper); border:1px solid var(--line); border-radius:12px;
+      margin-bottom:10px; overflow:hidden;
+    }
+    .jc-faq summary{
+      list-style:none; cursor:pointer; padding:18px 22px; font-size:16px; font-weight:600;
+      display:flex; justify-content:space-between; align-items:center; gap:16px;
+    }
+    .jc-faq summary::-webkit-details-marker{ display:none; }
+    .jc-faq summary .chev{ flex:0 0 auto; width:18px; height:18px; transition:transform .2s; color:var(--accent); }
+    .jc-faq details[open] summary .chev{ transform:rotate(180deg); }
+    .jc-faq details .body{ padding:0 22px 20px; font-size:15.5px; line-height:1.65; color:var(--muted); }
+    .jc-faq details .body p{ margin:0 0 12px; }
+    .jc-faq details .body p:last-child{ margin-bottom:0; }
+    .jc-faq details .body strong{ color:var(--ink); }
+
+    .jc-faq .cta{
+      margin-top:34px; background:var(--accent); color:#fff; border-radius:16px;
+      padding:28px 30px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:18px;
+    }
+    .jc-faq .cta p{ margin:0; font-size:16.5px; line-height:1.5; max-width:520px; }
+    .jc-faq .cta a{
+      background:#fff; color:var(--accent); text-decoration:none; font-weight:600;
+      padding:13px 24px; border-radius:999px; white-space:nowrap;
+    }
+    .jc-faq .disclaimer{ font-size:12.5px; color:var(--muted); margin-top:22px; line-height:1.5; }
+
+    @media (max-width:560px){ .jc-faq .cta{ flex-direction:column; align-items:flex-start; } }
+  </style>
+
+  <div class="wrap">
+    <p class="eyebrow">For Families</p>
+    <h2>Questions Parents Often Ask</h2>
+    <p class="lead">
+      A diagnosis like Hirschsprung disease, an anorectal malformation, or inflammatory bowel
+      disease can feel overwhelming. Here are plain-language answers to the questions families
+      ask most — what the condition is, what surgery and recovery involve, and what life looks
+      like afterward.
+    </p>
+
+    <div class="tabs">
+      <button class="tab active" data-tab="hscr">Hirschsprung Disease</button>
+      <button class="tab" data-tab="arm">Anorectal Malformations</button>
+      <button class="tab" data-tab="ibd">Inflammatory Bowel Disease</button>
+    </div>
+
+    <!-- ===================== HIRSCHSPRUNG ===================== -->
+    <div class="group active" id="hscr">
+      <div class="intro">
+        <strong>In short:</strong> Hirschsprung disease means a section of the bowel is missing the nerve
+        cells that tell it to relax and pass stool. That segment stays tight, so stool backs up behind it.
+        Surgery removes the affected segment and connects healthy bowel to the anus. Most children go on to
+        lead full, active lives.
+      </div>
+
+      <details open>
+        <summary>What causes Hirschsprung disease? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="body">
+          <p>During pregnancy, nerve cells normally grow along the entire bowel. In Hirschsprung disease, that
+          growth stops early, leaving the last part of the bowel without nerves. Nothing a parent did or didn't
+          do causes it. It is present from birth and is sometimes linked to other genetic conditions, which is
+          why a full evaluation matters.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How is it diagnosed? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="body">
+          <p>It's often suspected in newborns who don't pass their first stool (meconium) within the first day
+          or two, or who have a swollen belly and trouble feeding. Older children may have severe, lifelong
+          constipation. The diagnosis is confirmed with a <strong>rectal biopsy</strong> — a small tissue
+          sample checked for nerve cells — sometimes alongside a contrast enema X-ray.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>What does the surgery involve? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="body">
+          <p>The operation is called a <strong>pull-through</strong>. The surgeon removes the segment of bowel
+          without nerves and connects the healthy bowel above it to the anus, preserving the anal canal so the
+          child can control bowel movements. Many pull-throughs are done in a single, minimally invasive
+          operation. Some children need a temporary ostomy first if the bowel needs time to recover.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>What is recovery like? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="body">
+          <p>Most children stay in the hospital for several days to a week and gradually return to normal
+          feeding. In the early weeks the skin around the bottom can get irritated from more frequent stooling —
+          this is expected and improves with diligent skin care. Your team will guide you on feeding, skin
+          protection, and what's normal.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>What is enterocolitis, and what warning signs should I watch for? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="body">
+          <p>Hirschsprung-associated enterocolitis is an infection/inflammation of the bowel that can happen
+          before or after surgery. <strong>Call your surgeon or seek care urgently</strong> if your child has a
+          swollen belly, fever, explosive or foul-smelling diarrhea, vomiting, or seems unusually tired or
+          unwell. Caught early, it's very treatable.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Will my child have normal bowel control as they grow? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="body">
+          <p>Many children achieve good bowel control. Some need extra help with constipation or accidents,
+          especially around toilet-training age, and a structured <strong>bowel management program</strong> can
+          make a real difference. The goal is a child who is clean, comfortable, and confident — and there are
+          proven tools to get there.</p>
+        </div>
+      </details>
+    </div>
+
+    <!-- ===================== ANORECTAL MALFORMATIONS ===================== -->
+    <div class="group" id="arm">
+      <div class="intro">
+        <strong>In short:</strong> An anorectal malformation (ARM) means the anus and rectum didn't form
+        normally before birth. There's a wide range — from minor to complex — and the type guides the repair.
+        With expert reconstruction and follow-up, the great majority of children do well.
+      </div>
+
+      <details open>
+        <summary>What exactly is an anorectal malformation? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="body">
+          <p>It's a group of birth differences in how the anus and rectum connect to the outside. In some
+          children the opening is in the wrong place, too narrow, or absent; in others the rectum connects to
+          the urinary or genital tract through a channel called a fistula. The specific anatomy varies a lot,
+          which is why an experienced colorectal team is important.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How is it found and evaluated? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="body">
+          <p>Most ARMs are noticed right after birth during the newborn exam. The team then maps the anatomy
+          with imaging and looks for associated differences in the spine, kidneys, heart, and other systems
+          (sometimes grouped as the "VACTERL" associations). This complete picture shapes the surgical plan.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>What does treatment look like? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="body">
+          <p>It depends on the type. Some newborns need a temporary <strong>colostomy</strong> first to allow
+          stool to pass while they grow, followed by a reconstruction (often a <strong>posterior sagittal
+          anorectoplasty, or PSARP</strong>) that places the rectum correctly within the muscle complex. The
+          colostomy is later closed. Simpler malformations may be repaired in a single operation.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Will my child be able to toilet train and have bowel control? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="body">
+          <p>Outcomes depend on the type of malformation and the muscles and nerves present. Many children
+          achieve voluntary bowel control. For those who need help, a <strong>bowel management program</strong>
+          can keep them reliably clean and in regular underwear, which is life-changing for school and
+          confidence. Follow-up through childhood is part of getting the best result.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>My child was repaired elsewhere and isn't doing well — can that be helped? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="body">
+          <p>Yes. A meaningful part of specialized colorectal practice is caring for children who continue to
+          have problems after an earlier repair — ongoing soiling, constipation, or anatomy that needs
+          revision. A careful re-evaluation can identify what's happening and whether <strong>reoperative
+          surgery</strong> or a tailored management plan would help.</p>
+        </div>
+      </details>
+    </div>
+
+    <!-- ===================== IBD ===================== -->
+    <div class="group" id="ibd">
+      <div class="intro">
+        <strong>In short:</strong> Inflammatory bowel disease (IBD) — mainly Crohn's disease and ulcerative
+        colitis — causes ongoing inflammation of the digestive tract. It's usually managed with medication by a
+        gastroenterologist; surgery is reserved for specific situations and can greatly improve quality of life
+        when it's needed.
+      </div>
+
+      <details open>
+        <summary>What's the difference between Crohn's and ulcerative colitis? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="body">
+          <p><strong>Ulcerative colitis</strong> affects the large intestine (colon) and rectum, in a
+          continuous pattern. <strong>Crohn's disease</strong> can affect any part of the digestive tract,
+          often in patches, and can involve deeper layers of the bowel wall. Both are managed as a team between
+          gastroenterology and surgery.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>When is surgery needed for IBD? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="body">
+          <p>Most children are treated with medication. Surgery is considered when disease doesn't respond to
+          medicines, when there are complications (such as strictures, abscesses, fistulas, or bleeding), when
+          growth and nutrition are seriously affected, or in an emergency. The aim is always the least surgery
+          needed to get a child healthy and growing.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>What operations are used? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="body">
+          <p>For ulcerative colitis, removing the colon can be curative for the colon disease; in selected
+          children this is followed by a reconstruction (a <strong>J-pouch</strong>) so they can pass stool
+          normally. For Crohn's, surgery typically removes or repairs the affected segment while preserving as
+          much healthy bowel as possible. Many of these procedures can be done minimally invasively.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>What about an ostomy — is it permanent? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="body">
+          <p>An ostomy (bringing the bowel to the skin to drain into a pouch) is often <strong>temporary</strong>,
+          giving the bowel time to heal before reconnection. Sometimes it's permanent. Children adapt remarkably
+          well, and an ostomy nurse helps the whole family learn the care and routines.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Can my child live a normal life with IBD? <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="body">
+          <p>Yes. With good medical control, nutrition support, and surgery when it's truly needed, most
+          children with IBD attend school, play sports, and grow well. Care is long-term and coordinated, with
+          the goal of keeping disease quiet and letting your child just be a kid.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="cta">
+      <p>Have a question that isn't answered here, or want a second opinion on your child's care?</p>
+      <a href="#contact">Get in touch →</a>
+    </div>
+
+    <p class="disclaimer">
+      This information is general education for families and does not replace a consultation. Every child is
+      different — your care team's guidance for your child always takes priority. If your child is acutely
+      unwell, seek medical care right away.
+    </p>
+  </div>
+
+  <script>
+    (function(){
+      var root = document.getElementById('for-families');
+      var tabs = root.querySelectorAll('.tab');
+      var groups = root.querySelectorAll('.group');
+      tabs.forEach(function(t){
+        t.addEventListener('click', function(){
+          tabs.forEach(function(x){ x.classList.remove('active'); });
+          groups.forEach(function(g){ g.classList.remove('active'); });
+          t.classList.add('active');
+          root.querySelector('#' + t.dataset.tab).classList.add('active');
+        });
+      });
+    })();
+  </script>
+</section>
+<!-- ==== END: paste into your page ==== -->
+
+</body>
+</html>
