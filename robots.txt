@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /instructions.html
+
+Sitemap: https://www.doctorcalisto.com/sitemap.xml
