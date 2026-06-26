@@ -1,18 +1,3 @@
-<!-- ============================================================
-     IN THE MEDIA / EN LOS MEDIOS  —  Dr. Juan L. Calisto
-     ------------------------------------------------------------
-     HOW TO USE
-     1. Open this file in a browser to preview the section.
-     2. To add it to doctorcalisto.com, copy EVERYTHING between
-        the  <!-- MEDIA SECTION START -->  and  <!-- MEDIA SECTION END -->
-        markers below and paste it into index.html where you want
-        the section to appear (e.g. just before the Publications or
-        Contact section).
-     3. Optional: add a nav link  ->  <a href="#media">In the Media</a>
-     4. To add more items (CNN, Univision, NPR, etc.) just copy one
-        object in the data arrays near the bottom and fill it in.
-        Look for the  // === PASTE NEW ITEMS HERE ===  comments.
-     ============================================================ -->
 
 <!-- MEDIA SECTION START -->
 <section id="media" class="dc-media" aria-labelledby="dc-media-title">
@@ -56,8 +41,26 @@
     .dc-media .dc-card:hover .dc-play{transform:translate(-50%,-50%) scale(1.08);}
     .dc-media .dc-play::after{content:"";display:block;width:0;height:0;border-style:solid;border-width:9px 0 9px 15px;
       border-color:transparent transparent transparent var(--dc-teal-d);margin-left:3px;}
-    .dc-media .dc-badge{position:absolute;top:10px;left:10px;background:rgba(16,42,67,.92);color:#fff;font-size:11px;font-weight:700;
-      letter-spacing:.05em;text-transform:uppercase;padding:5px 9px;border-radius:6px;}
+    .dc-media .dc-badge{position:absolute;top:10px;left:10px;background:#fff;padding:5px 10px;border-radius:7px;
+      box-shadow:0 2px 7px rgba(16,42,67,.22);display:inline-flex;align-items:center;}
+    /* brand logos */
+    .dc-media .lg{display:inline-flex;align-items:center;line-height:1;font-family:Arial,Helvetica,sans-serif;white-space:nowrap;}
+    .dc-media .lg-npr{gap:2px;}
+    .dc-media .lg-npr b{display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;background:#2a3f6b;
+      color:#fff;font-size:10px;font-weight:800;font-style:normal;border-radius:3px;}
+    .dc-media .lg-tm{font-weight:800;letter-spacing:-.02em;color:#1565c0;font-size:15px;text-transform:lowercase;}
+    .dc-media .lg-yt{font-weight:800;color:#212121;font-size:13px;}
+    .dc-media .lg-yt i{display:inline-block;width:22px;height:16px;background:#f00;border-radius:4px;position:relative;margin-right:5px;}
+    .dc-media .lg-yt i::after{content:"";position:absolute;left:8px;top:4px;border-style:solid;border-width:4px 0 4px 7px;border-color:transparent transparent transparent #fff;}
+    .dc-media .lg-wlrn{font-weight:800;color:#0a3a5c;font-size:14px;letter-spacing:.03em;}
+    .dc-media .lg-generic{font-weight:700;color:var(--dc-navy);font-size:12px;text-transform:uppercase;letter-spacing:.05em;}
+    /* fallback tile holds a white logo chip */
+    .dc-media .dc-fallbox{background:#fff;padding:10px 16px;border-radius:10px;box-shadow:0 5px 16px rgba(0,0,0,.22);}
+    /* back button */
+    .dc-media .dc-back{display:inline-flex;align-items:center;gap:7px;color:var(--dc-navy);text-decoration:none;font-weight:600;
+      font-size:14px;border:1px solid var(--dc-line);background:#fff;padding:9px 16px;border-radius:999px;margin-bottom:26px;
+      transition:background .15s ease,color .15s ease,border-color .15s ease;}
+    .dc-media .dc-back:hover{background:var(--dc-navy);color:#fff;border-color:var(--dc-navy);}
     .dc-media .dc-dur{position:absolute;bottom:10px;right:10px;background:rgba(0,0,0,.78);color:#fff;font-size:12px;font-weight:600;
       padding:3px 7px;border-radius:5px;}
     .dc-media .dc-body{padding:16px 18px 20px;display:flex;flex-direction:column;gap:8px;flex:1;}
@@ -73,6 +76,11 @@
   </style>
 
   <div class="dc-wrap">
+    <!-- Change href="/" if your home page lives elsewhere (e.g. "#main" or "index.html") -->
+    <a class="dc-back" href="/">
+      <span aria-hidden="true">&larr;</span>
+      <span data-en>Back to Doctor Calisto</span><span data-es>Volver a Doctor Calisto</span>
+    </a>
     <div class="dc-head">
       <div>
         <p class="dc-eyebrow"><span data-en>In the Media</span><span data-es>En los medios</span></p>
@@ -136,16 +144,6 @@
         img:""
       },
       {
-        outlet:"Nicklaus Children's",
-        title_en:"Patients of the Month: The Crane Twins",
-        title_es:"Pacientes del mes: los gemelos Crane",
-        desc_en:"Both twins were diagnosed with Hirschsprung's disease and underwent life-changing surgery at the Nicklaus Children's Colorectal Center.",
-        desc_es:"Ambos gemelos fueron diagnosticados con enfermedad de Hirschsprung y operados en el Centro Colorrectal de Nicklaus Children's.",
-        date:"Nicklaus Children's Hospital", duration:"",
-        url:"https://www.nicklauschildrens.org/news-events/patient-stories/patients-of-the-month-crane-twins",
-        img:""
-      },
-      {
         outlet:"YouTube",
         title_en:"The Crane Twins' Rare Case of Hirschsprung's",
         title_es:"El raro caso de Hirschsprung de los gemelos Crane",
@@ -176,14 +174,6 @@
        date:"Apr 29, 2026", duration:"1:09",
        url:"https://www.telemundo.com/shows/hoy-dia/salud/video/este-es-el-organo-de-tu-cuerpo-que-trabaja-todo-el-tiempo-y-se-dana-con-el-alcohol-tmvo13176687",
        img:"https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/telemundocms/MPX/image/NBCU_Telemundo/641/431/45592917864-1080pnbcstations.jpg"},
-
-      {title_es:"Una cirugía plástica, ¿te puede meter en problemas con TSA?",
-       title_en:"Can cosmetic surgery cause problems with TSA?",
-       desc_es:"Un doctor aborda cómo ciertos procedimientos pueden afectar los controles de seguridad.",
-       desc_en:"A doctor explains how certain procedures can affect airport security screening.",
-       date:"May 2026", duration:"",
-       url:"https://www.telemundo.com/shows/hoy-dia/salud/video/una-cirugia-plastica-te-puede-meter-en-problemas-con-tsa-un-doctor-aborda-el-tema-tmvo13190224",
-       img:""},
 
       {title_es:"¿Qué es la colitis ulcerativa y es real que no tiene cura?",
        title_en:"What is ulcerative colitis, and is it true there's no cure?",
@@ -254,15 +244,25 @@
     /* ---------- RENDER ---------- */
     function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 
+    function logoFor(outlet){
+      var o = (outlet||'').toLowerCase();
+      if(o.indexOf('npr')>-1)       return '<span class="lg lg-npr"><b>n</b><b>p</b><b>r</b></span>';
+      if(o.indexOf('telemundo')>-1) return '<span class="lg lg-tm">telemundo</span>';
+      if(o.indexOf('youtube')>-1)   return '<span class="lg lg-yt"><i></i>YouTube</span>';
+      if(o.indexOf('wlrn')>-1)      return '<span class="lg lg-wlrn">WLRN</span>';
+      return '<span class="lg lg-generic">'+esc(outlet)+'</span>';
+    }
+
     function card(it, defaultBadge){
       var outlet = it.outlet || defaultBadge || '';
+      var logo = logoFor(outlet);
       var thumb;
       if(it.img){
         thumb = '<img src="'+esc(it.img)+'" alt="" loading="lazy" '+
                 'onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\';">'+
-                '<div class="dc-fallback" style="display:none">'+esc(outlet)+'</div>';
+                '<div class="dc-fallback" style="display:none"><span class="dc-fallbox">'+logo+'</span></div>';
       } else {
-        thumb = '<div class="dc-fallback">'+esc(outlet)+'</div>';
+        thumb = '<div class="dc-fallback"><span class="dc-fallbox">'+logo+'</span></div>';
       }
       var dur = it.duration ? '<span class="dc-dur">'+esc(it.duration)+'</span>' : '';
       var titleEn = esc(it.title_en||it.title_es||'');
@@ -272,7 +272,7 @@
       return ''+
       '<a class="dc-card" href="'+esc(it.url)+'" target="_blank" rel="noopener">'+
         '<div class="dc-thumb">'+
-          '<span class="dc-badge">'+esc(outlet)+'</span>'+
+          '<span class="dc-badge">'+logo+'</span>'+
           thumb+
           '<span class="dc-play" aria-hidden="true"></span>'+
           dur+
