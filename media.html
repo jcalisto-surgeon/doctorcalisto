@@ -1,0 +1,295 @@
+<!-- ============================================================
+     IN THE MEDIA / EN LOS MEDIOS  —  Dr. Juan L. Calisto
+     ------------------------------------------------------------
+     HOW TO USE
+     1. Open this file in a browser to preview the section.
+     2. To add it to doctorcalisto.com, copy EVERYTHING between
+        the  <!-- MEDIA SECTION START -->  and  <!-- MEDIA SECTION END -->
+        markers below and paste it into index.html where you want
+        the section to appear (e.g. just before the Publications or
+        Contact section).
+     3. Optional: add a nav link  ->  <a href="#media">In the Media</a>
+     4. To add more items (CNN, Univision, NPR, etc.) just copy one
+        object in the data arrays near the bottom and fill it in.
+        Look for the  // === PASTE NEW ITEMS HERE ===  comments.
+     ============================================================ -->
+
+<!-- MEDIA SECTION START -->
+<section id="media" class="dc-media" aria-labelledby="dc-media-title">
+  <style>
+    /* Scoped styles — prefixed .dc-media so they won't collide with the rest of the site */
+    .dc-media{--dc-navy:#102a43;--dc-navy-2:#243b53;--dc-teal:#1c7a8c;--dc-teal-d:#155e6c;
+      --dc-ink:#243b53;--dc-muted:#627d98;--dc-line:#e3eaf2;--dc-bg:#f7fafc;--dc-card:#ffffff;
+      background:var(--dc-bg);padding:72px 20px;color:var(--dc-ink);
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+    .dc-media *{box-sizing:border-box;}
+    .dc-media .dc-wrap{max-width:1120px;margin:0 auto;}
+    .dc-media .dc-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:8px;}
+    .dc-media .dc-eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:700;color:var(--dc-teal);margin:0 0 10px;}
+    .dc-media h2{font-family:Georgia,"Times New Roman",serif;font-weight:600;color:var(--dc-navy);
+      font-size:clamp(28px,4vw,40px);line-height:1.1;margin:0;}
+    .dc-media .dc-sub{color:var(--dc-muted);font-size:16px;max-width:640px;margin:14px 0 0;line-height:1.55;}
+    /* language toggle */
+    .dc-media .dc-lang{display:inline-flex;border:1px solid var(--dc-line);border-radius:999px;overflow:hidden;background:#fff;}
+    .dc-media .dc-lang button{border:0;background:transparent;padding:8px 16px;font-size:13px;font-weight:600;color:var(--dc-muted);cursor:pointer;}
+    .dc-media .dc-lang button.is-active{background:var(--dc-navy);color:#fff;}
+    .dc-media [data-es]{display:none;}
+    .dc-media.lang-es [data-es]{display:inline;}
+    .dc-media.lang-es [data-en]{display:none;}
+    /* section label */
+    .dc-media .dc-group-label{font-family:Georgia,serif;color:var(--dc-navy);font-size:20px;font-weight:600;
+      margin:48px 0 18px;padding-bottom:10px;border-bottom:1px solid var(--dc-line);display:flex;align-items:center;gap:10px;}
+    .dc-media .dc-group-label .dc-count{font-family:inherit;font-size:13px;font-weight:600;color:var(--dc-muted);}
+    /* grid */
+    .dc-media .dc-grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));}
+    /* card */
+    .dc-media .dc-card{display:flex;flex-direction:column;background:var(--dc-card);border:1px solid var(--dc-line);
+      border-radius:14px;overflow:hidden;text-decoration:none;color:inherit;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;}
+    .dc-media .dc-card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(16,42,67,.13);border-color:#cdd9e6;}
+    .dc-media .dc-thumb{position:relative;aspect-ratio:16/9;background:linear-gradient(135deg,var(--dc-navy),var(--dc-teal));overflow:hidden;}
+    .dc-media .dc-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
+    .dc-media .dc-thumb .dc-fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+      background:linear-gradient(135deg,var(--dc-navy),var(--dc-teal));color:#fff;font-weight:700;letter-spacing:.04em;
+      font-size:15px;text-align:center;padding:0 18px;}
+    .dc-media .dc-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:54px;height:54px;border-radius:50%;
+      background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.25);transition:transform .18s ease;}
+    .dc-media .dc-card:hover .dc-play{transform:translate(-50%,-50%) scale(1.08);}
+    .dc-media .dc-play::after{content:"";display:block;width:0;height:0;border-style:solid;border-width:9px 0 9px 15px;
+      border-color:transparent transparent transparent var(--dc-teal-d);margin-left:3px;}
+    .dc-media .dc-badge{position:absolute;top:10px;left:10px;background:rgba(16,42,67,.92);color:#fff;font-size:11px;font-weight:700;
+      letter-spacing:.05em;text-transform:uppercase;padding:5px 9px;border-radius:6px;}
+    .dc-media .dc-dur{position:absolute;bottom:10px;right:10px;background:rgba(0,0,0,.78);color:#fff;font-size:12px;font-weight:600;
+      padding:3px 7px;border-radius:5px;}
+    .dc-media .dc-body{padding:16px 18px 20px;display:flex;flex-direction:column;gap:8px;flex:1;}
+    .dc-media .dc-meta{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--dc-muted);font-weight:600;}
+    .dc-media .dc-meta .dc-dot{width:4px;height:4px;border-radius:50%;background:var(--dc-line);}
+    .dc-media .dc-title{font-size:16px;line-height:1.35;font-weight:600;color:var(--dc-navy);margin:0;}
+    .dc-media .dc-desc{font-size:13.5px;line-height:1.5;color:var(--dc-muted);margin:0;}
+    .dc-media .dc-more{margin-top:auto;padding-top:8px;font-size:13px;font-weight:700;color:var(--dc-teal);}
+    .dc-media .dc-card:hover .dc-more{color:var(--dc-teal-d);}
+    /* featured cards are a touch larger on wide screens */
+    .dc-media .dc-grid.dc-featured{grid-template-columns:repeat(auto-fill,minmax(330px,1fr));}
+    @media(max-width:560px){.dc-media{padding:52px 16px;}}
+  </style>
+
+  <div class="dc-wrap">
+    <div class="dc-head">
+      <div>
+        <p class="dc-eyebrow"><span data-en>In the Media</span><span data-es>En los medios</span></p>
+        <h2 id="dc-media-title"><span data-en>Press &amp; television appearances</span><span data-es>Apariciones en prensa y televisión</span></h2>
+        <p class="dc-sub">
+          <span data-en>Dr. Calisto regularly shares pediatric and colorectal health guidance with Spanish-language audiences and has been featured for his work on complex reconstructive surgery.</span>
+          <span data-es>El Dr. Calisto comparte con frecuencia orientación sobre salud pediátrica y colorrectal con audiencias de habla hispana, y ha sido destacado por su trabajo en cirugía reconstructiva compleja.</span>
+        </p>
+      </div>
+      <div class="dc-lang" role="group" aria-label="Language">
+        <button type="button" data-setlang="en" class="is-active">EN</button>
+        <button type="button" data-setlang="es">ES</button>
+      </div>
+    </div>
+
+    <!-- FEATURED STORIES -->
+    <h3 class="dc-group-label">
+      <span data-en>Featured stories</span><span data-es>Historias destacadas</span>
+    </h3>
+    <div id="dc-featured" class="dc-grid dc-featured"></div>
+
+    <!-- TELEMUNDO VIDEO LIBRARY -->
+    <h3 class="dc-group-label">
+      <span>Telemundo · Hoy Día — Salud</span>
+      <span class="dc-count" id="dc-tm-count"></span>
+    </h3>
+    <div id="dc-telemundo" class="dc-grid"></div>
+  </div>
+
+  <script>
+  (function(){
+    var root = document.getElementById('media');
+
+    /* ---------- LANGUAGE TOGGLE ---------- */
+    root.querySelectorAll('[data-setlang]').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var lang = btn.getAttribute('data-setlang');
+        root.classList.toggle('lang-es', lang === 'es');
+        root.querySelectorAll('[data-setlang]').forEach(function(b){
+          b.classList.toggle('is-active', b === btn);
+        });
+      });
+    });
+
+    /* ---------- DATA ----------
+       Each item: {outlet, title_en, title_es, desc_en, desc_es, date, duration, url, img}
+       - img is optional. If omitted or it fails to load, a branded placeholder shows.
+       - For non-video press, set duration to "" .
+    */
+
+    // === FEATURED PRESS — paste new CNN / Univision / NPR items here ===
+    var featured = [
+      {
+        outlet:"WLRN · NPR",
+        title_en:"Guatemalan Girl Power: A Maya Baby Makes It to South Florida — and Life-Giving Surgery",
+        title_es:"Una bebé maya llega al sur de Florida para una cirugía que le cambia la vida",
+        desc_en:"NPR member station WLRN follows Mayra, an Akatek Maya toddler with a rare cloacal malformation, and the Nicklaus team — led by Dr. Calisto — that reconstructed her anatomy.",
+        desc_es:"La emisora de NPR WLRN sigue a Mayra, una niña maya akateka con una rara malformación cloacal, y al equipo de Nicklaus —dirigido por el Dr. Calisto— que reconstruyó su anatomía.",
+        date:"May 2019", duration:"",
+        url:"https://www.wlrn.org/show/latin-america-report/2019-05-13/guatemalan-girl-power-a-maya-baby-makes-it-to-south-florida-and-life-giving-surgery",
+        img:""
+      },
+      {
+        outlet:"Nicklaus Children's",
+        title_en:"Patients of the Month: The Crane Twins",
+        title_es:"Pacientes del mes: los gemelos Crane",
+        desc_en:"Both twins were diagnosed with Hirschsprung's disease and underwent life-changing surgery at the Nicklaus Children's Colorectal Center.",
+        desc_es:"Ambos gemelos fueron diagnosticados con enfermedad de Hirschsprung y operados en el Centro Colorrectal de Nicklaus Children's.",
+        date:"Nicklaus Children's Hospital", duration:"",
+        url:"https://www.nicklauschildrens.org/news-events/patient-stories/patients-of-the-month-crane-twins",
+        img:""
+      },
+      {
+        outlet:"YouTube",
+        title_en:"The Crane Twins' Rare Case of Hirschsprung's",
+        title_es:"El raro caso de Hirschsprung de los gemelos Crane",
+        desc_en:"Video feature on the twins' diagnosis and surgical care at Nicklaus Children's Hospital.",
+        desc_es:"Reportaje en video sobre el diagnóstico y la atención quirúrgica de los gemelos en Nicklaus Children's Hospital.",
+        date:"Nicklaus Children's", duration:"VIDEO",
+        url:"https://www.youtube.com/watch?v=se-Pq8EPxoc",
+        img:"https://img.youtube.com/vi/se-Pq8EPxoc/hqdefault.jpg"
+      }
+      // ,{ outlet:"CNN", title_en:"", title_es:"", desc_en:"", desc_es:"", date:"", duration:"", url:"", img:"" }
+      // ,{ outlet:"Univisión", title_en:"", title_es:"", desc_en:"", desc_es:"", date:"", duration:"", url:"", img:"" }
+    ];
+
+    // === TELEMUNDO — Hoy Día (Salud) segments featuring Dr. Calisto ===
+    var telemundo = [
+      {title_es:"¿Cuáles son las causas y tratamientos para la úlcera péptica?",
+       title_en:"Causes and treatments for peptic ulcers",
+       desc_es:"Las causas de la úlcera péptica —entre ellas la infección por Helicobacter pylori— y sus tratamientos.",
+       desc_en:"Causes of peptic ulcers — including H. pylori — and how they are treated.",
+       date:"Apr 8, 2026", duration:"1:03",
+       url:"https://www.telemundo.com/shows/hoy-dia/salud/video/cuales-son-las-causas-y-tratamientos-para-la-ulcera-peptica-tmvo13165716",
+       img:"https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/v1776189918/telemundocms/images/mpx/2026/04/08/45121053499-1080pnbcstations.jpg"},
+
+      {title_es:"Este es el órgano que trabaja todo el tiempo y se daña con el alcohol",
+       title_en:"The organ that works around the clock and is damaged by alcohol",
+       desc_es:"El órgano que purifica la sangre y cómo el alcohol, las frituras y algunos virus lo dañan.",
+       desc_en:"The organ that purifies the blood and how alcohol, fried foods and some viruses harm it.",
+       date:"Apr 29, 2026", duration:"1:09",
+       url:"https://www.telemundo.com/shows/hoy-dia/salud/video/este-es-el-organo-de-tu-cuerpo-que-trabaja-todo-el-tiempo-y-se-dana-con-el-alcohol-tmvo13176687",
+       img:"https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/telemundocms/MPX/image/NBCU_Telemundo/641/431/45592917864-1080pnbcstations.jpg"},
+
+      {title_es:"Una cirugía plástica, ¿te puede meter en problemas con TSA?",
+       title_en:"Can cosmetic surgery cause problems with TSA?",
+       desc_es:"Un doctor aborda cómo ciertos procedimientos pueden afectar los controles de seguridad.",
+       desc_en:"A doctor explains how certain procedures can affect airport security screening.",
+       date:"May 2026", duration:"",
+       url:"https://www.telemundo.com/shows/hoy-dia/salud/video/una-cirugia-plastica-te-puede-meter-en-problemas-con-tsa-un-doctor-aborda-el-tema-tmvo13190224",
+       img:""},
+
+      {title_es:"¿Qué es la colitis ulcerativa y es real que no tiene cura?",
+       title_en:"What is ulcerative colitis, and is it true there's no cure?",
+       desc_es:"Una enfermedad crónica autoinmune del colon; sin cura, pero con síntomas controlables con medicación.",
+       desc_en:"A chronic autoimmune disease of the colon — no cure, but symptoms controllable with medication.",
+       date:"Jan 8, 2026", duration:"1:04",
+       url:"https://www.telemundo.com/shows/hoy-dia/salud/video/que-es-la-colitis-ulcerativa-y-es-real-que-no-tiene-cura-tmvo13099132",
+       img:"https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/v1772226929/telemundocms/images/mpx/2026/01/08/43395455568-1080pnbcstations.jpg"},
+
+      {title_es:"Especialista explica cómo evitar empachos e intoxicaciones en Navidad",
+       title_en:"How to avoid indigestion and food poisoning over the holidays",
+       desc_es:"Consejos para evitar empachos, intoxicaciones y molestias digestivas en las fiestas.",
+       desc_en:"Tips to avoid indigestion, food poisoning and digestive discomfort during the holidays.",
+       date:"Dec 2025", duration:"",
+       url:"https://www.telemundo.com/shows/hoy-dia/salud/video/especialista-explica-como-evitar-empachos-intoxicaciones-y-molestias-digestivas-en-navidad-tmvo13079176",
+       img:""},
+
+      {title_es:"¿Qué es el reflujo gastroesofágico y cuáles son sus causas?",
+       title_en:"What is gastroesophageal reflux, and what causes it?",
+       desc_es:"Por qué ocurre el reflujo y recomendaciones como evitar comer antes de dormir.",
+       desc_en:"Why reflux happens, plus tips such as avoiding eating before bed.",
+       date:"Dec 1, 2025", duration:"1:11",
+       url:"https://www.telemundo.com/shows/hoy-dia/salud/video/que-es-el-reflujo-gastroesofagico-y-cuales-son-sus-causas-tmvo13072742",
+       img:"https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/v1772226589/telemundocms/images/mpx/2025/12/01/42771796155-1080pnbcstations.jpg"},
+
+      {title_es:"¿Qué es la apendicitis, cuáles son sus síntomas y tratamientos?",
+       title_en:"What is appendicitis — symptoms and treatments",
+       desc_es:"Una inflamación del intestino que se manifiesta con dolor cerca del ombligo; no tratarla puede ser mortal.",
+       desc_en:"Inflammation of the intestine that causes pain near the navel — leaving it untreated can be fatal.",
+       date:"Oct 23, 2025", duration:"1:07",
+       url:"https://www.telemundo.com/shows/hoy-dia/salud/video/que-es-la-apendicitis-cuales-son-sus-sintomas-y-tratamientos-tmvo13045034",
+       img:"https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/v1772226154/telemundocms/images/mpx/2025/10/23/42234909263-1080pnbcstations.jpg"},
+
+      {title_es:"¿Por qué ocurre una hernia inguinal y cuáles son sus riesgos?",
+       title_en:"Why inguinal hernias happen and their risks",
+       desc_es:"Un debilitamiento de la pared muscular en la ingle; mayor riesgo en quienes cargan objetos pesados.",
+       desc_en:"A weakening of the muscle wall in the groin — higher risk for those who lift heavy objects.",
+       date:"Oct 8, 2025", duration:"1:05",
+       url:"https://www.telemundo.com/shows/hoy-dia/salud/video/por-que-ocurre-una-hernia-inguinal-y-cuales-son-sus-riesgos-tmvo13033213",
+       img:"https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/v1772225981/telemundocms/images/mpx/2025/10/08/42004112763-1080pnbcstations.jpg"},
+
+      {title_es:"¿Cuáles son los síntomas de cálculos en la vesícula biliar?",
+       title_en:"Symptoms of gallstones",
+       desc_es:"Dolor abdominal, náuseas, vómito y fiebre; el tratamiento es retirar la vesícula.",
+       desc_en:"Abdominal pain, nausea, vomiting and fever — treatment is removal of the gallbladder.",
+       date:"Aug 19, 2025", duration:"1:08",
+       url:"https://www.telemundo.com/shows/hoy-dia/salud/video/cuales-son-los-sintomas-de-la-presencia-de-calculos-en-la-vesicula-biliar-tmvo12991075",
+       img:"https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/v1772225378/telemundocms/images/mpx/2025/08/19/41254679475-1080pnbcstations.jpg"},
+
+      {title_es:"¿Qué es la diverticulitis, cómo se previene y cómo se trata?",
+       title_en:"What is diverticulitis — prevention and treatment",
+       desc_es:"Inflamación de los divertículos del intestino grueso, ligada al bajo consumo de fibra.",
+       desc_en:"Inflammation of pouches in the large intestine, linked to low fiber intake.",
+       date:"Aug 15, 2025", duration:"1:09",
+       url:"https://www.telemundo.com/shows/hoy-dia/salud/video/que-es-la-diverticulitis-como-se-puede-prevenir-y-como-se-trata-tmvo12988645",
+       img:"https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/v1772225339/telemundocms/images/mpx/2025/08/15/41196827670-1080pnbcstations.jpg"},
+
+      {title_es:"Un médico explica las causas del estreñimiento y cómo combatirlo",
+       title_en:"A doctor explains the causes of constipation and how to fight it",
+       desc_es:"Causas comunes del estreñimiento y recomendaciones para combatirlo.",
+       desc_en:"Common causes of constipation and recommendations to address it.",
+       date:"2025", duration:"",
+       url:"https://www.telemundo.com/shows/hoy-dia/salud/video/un-medico-explica-las-causas-del-estrenimiento-y-como-combatirlo-tmvo12899052",
+       img:""}
+      // === PASTE NEW TELEMUNDO ITEMS HERE ===
+    ];
+
+    /* ---------- RENDER ---------- */
+    function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+
+    function card(it, defaultBadge){
+      var outlet = it.outlet || defaultBadge || '';
+      var thumb;
+      if(it.img){
+        thumb = '<img src="'+esc(it.img)+'" alt="" loading="lazy" '+
+                'onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\';">'+
+                '<div class="dc-fallback" style="display:none">'+esc(outlet)+'</div>';
+      } else {
+        thumb = '<div class="dc-fallback">'+esc(outlet)+'</div>';
+      }
+      var dur = it.duration ? '<span class="dc-dur">'+esc(it.duration)+'</span>' : '';
+      var titleEn = esc(it.title_en||it.title_es||'');
+      var titleEs = esc(it.title_es||it.title_en||'');
+      var descEn = esc(it.desc_en||'');
+      var descEs = esc(it.desc_es||'');
+      return ''+
+      '<a class="dc-card" href="'+esc(it.url)+'" target="_blank" rel="noopener">'+
+        '<div class="dc-thumb">'+
+          '<span class="dc-badge">'+esc(outlet)+'</span>'+
+          thumb+
+          '<span class="dc-play" aria-hidden="true"></span>'+
+          dur+
+        '</div>'+
+        '<div class="dc-body">'+
+          '<div class="dc-meta">'+(it.date?('<span>'+esc(it.date)+'</span>'):'')+'</div>'+
+          '<p class="dc-title"><span data-en>'+titleEn+'</span><span data-es>'+titleEs+'</span></p>'+
+          (descEn||descEs ? '<p class="dc-desc"><span data-en>'+descEn+'</span><span data-es>'+descEs+'</span></p>' : '')+
+          '<span class="dc-more"><span data-en>Watch / read &rarr;</span><span data-es>Ver / leer &rarr;</span></span>'+
+        '</div>'+
+      '</a>';
+    }
+
+    document.getElementById('dc-featured').innerHTML = featured.map(function(it){return card(it,'Press');}).join('');
+    document.getElementById('dc-telemundo').innerHTML = telemundo.map(function(it){return card(it,'Telemundo');}).join('');
+    document.getElementById('dc-tm-count').textContent = telemundo.length + ' videos';
+  })();
+  </script>
+</section>
+<!-- MEDIA SECTION END -->
